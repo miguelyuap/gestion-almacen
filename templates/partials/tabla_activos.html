@@ -1,0 +1,86 @@
+<section id="vista-activos">
+  <header class="page-header">
+    <h2>Activos fijos</h2>
+    <p>Equipos, muebles y bienes no consumibles con responsable y estado.</p>
+  </header>
+
+  <details class="panel" open>
+    <summary class="panel-header">Registrar activo</summary>
+    <div class="panel-body">
+      <form class="inline-grid"
+            hx-post="/activos"
+            hx-target="#contenido"
+            hx-swap="innerHTML"
+            hx-indicator="#nav-loading">
+        <label>
+          Código
+          <input type="text" name="codigo" required placeholder="AF-001" />
+        </label>
+        <label>
+          Nombre
+          <input type="text" name="nombre" required placeholder="Laptop Dell" />
+        </label>
+        <label>
+          Nº de serie
+          <input type="text" name="num_serie" placeholder="SN-…" />
+        </label>
+        <label>
+          Responsable
+          <input type="text" name="responsable" placeholder="Nombre" />
+        </label>
+        <label>
+          Estado
+          <select name="estado">
+            <option value="activo">Activo</option>
+            <option value="en_mantenimiento">En mantenimiento</option>
+            <option value="baja">Baja</option>
+          </select>
+        </label>
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </details>
+
+  <div class="panel">
+    <div class="panel-header">
+      <h3>Registro de activos</h3>
+    </div>
+    <div class="panel-body tight">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Nº serie</th>
+              <th>Responsable</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if activos %}
+              {% for a in activos %}
+              <tr>
+                <td><code>{{ a.codigo }}</code></td>
+                <td>{{ a.nombre }}</td>
+                <td>{{ a.num_serie or "—" }}</td>
+                <td>{{ a.responsable or "—" }}</td>
+                <td><span class="badge {{ a.estado }}">{{ a.estado.replace('_', ' ') }}</span></td>
+              </tr>
+              {% endfor %}
+            {% else %}
+              <tr>
+                <td colspan="5">
+                  <div class="empty-state">
+                    <strong>Sin activos registrados</strong>
+                    <p>Añade un activo o recibe una compra de tipo activo fijo.</p>
+                  </div>
+                </td>
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

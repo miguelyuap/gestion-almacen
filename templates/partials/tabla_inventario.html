@@ -1,0 +1,115 @@
+<section id="vista-inventario">
+  <header class="page-header">
+    <h2>Inventario</h2>
+    <p>Consumibles y stock por almacén. Usa +1 / −1 o un ajuste personalizado.</p>
+  </header>
+
+  <details class="panel" open>
+    <summary class="panel-header">Registrar consumible</summary>
+    <div class="panel-body">
+      <form class="inline-grid"
+            hx-post="/inventario"
+            hx-target="#contenido"
+            hx-swap="innerHTML"
+            hx-indicator="#nav-loading">
+        <label>
+          Código
+          <input type="text" name="codigo" required placeholder="SKU-001" />
+        </label>
+        <label>
+          Nombre
+          <input type="text" name="nombre" required placeholder="Resmas de papel" />
+        </label>
+        <label>
+          Almacén
+          <select name="almacen_id" required>
+            {% for alm in almacenes %}
+            <option value="{{ alm.id }}">{{ alm.nombre }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label>
+          Stock inicial
+          <input type="number" name="stock" min="0" value="0" required />
+        </label>
+        <label>
+          Precio unitario
+          <input type="number" name="precio_unitario" min="0" step="0.01" value="0" />
+        </label>
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </details>
+
+  <div class="panel">
+    <div class="panel-header">
+      <h3>Stock actual</h3>
+    </div>
+    <div class="panel-body tight">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Almacén</th>
+              <th>Stock</th>
+              <th>P. unitario</th>
+              <th>Ajustar</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if items %}
+              {% for i in items %}
+              <tr>
+                <td><code>{{ i.codigo }}</code></td>
+                <td>{{ i.nombre }}</td>
+                <td>{{ i.almacen_nombre }}</td>
+                <td>
+                  <span class="stock-pill {% if i.stock <= 5 %}bajo{% endif %}">{{ i.stock }}</span>
+                </td>
+                <td>{{ "%.2f"|format(i.precio_unitario) }}</td>
+                <td>
+                  <div class="acciones">
+                    <form hx-post="/inventario/{{ i.id }}/ajustar"
+                          hx-target="#contenido"
+                          hx-swap="innerHTML"
+                          hx-indicator="#nav-loading">
+                      <input type="hidden" name="delta" value="1" />
+                      <button type="submit" class="outline btn-sm" title="Entrada +1">+1</button>
+                    </form>
+                    <form hx-post="/inventario/{{ i.id }}/ajustar"
+                          hx-target="#contenido"
+                          hx-swap="innerHTML"
+                          hx-indicator="#nav-loading">
+                      <input type="hidden" name="delta" value="-1" />
+                      <button type="submit" class="outline secondary btn-sm" title="Salida −1"
+                              {% if i.stock <= 0 %}disabled{% endif %}>−1</button>
+                    </form>
+                    <form hx-post="/inventario/{{ i.id }}/ajustar"
+                          hx-target="#contenido"
+                          hx-swap="innerHTML"
+                          hx-indicator="#nav-loading">
+                      <input type="number" name="delta" value="5" step="1" aria-label="Cantidad a ajustar" />
+                      <button type="submit" class="contrast btn-sm">Aplicar</button>
+                    </form>
+                  </div>
+                </td>
+              </tr>
+              {% endfor %}
+            {% else %}
+              <tr>
+                <td colspan="6">
+                  <div class="empty-state">
+                    <strong>Inventario vacío</strong>
+                    <p>Registra un consumible o recibe una compra de tipo consumible.</p>
+                  </div>
+                </td>
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

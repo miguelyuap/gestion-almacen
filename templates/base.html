@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gestión de Almacén</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+  <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">GA</div>
+        <div class="brand-text">
+          <strong>Gestión Almacén</strong>
+          <span>Operaciones · Inventario</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-link active"
+           hx-get="/vistas/inicio"
+           hx-target="#contenido"
+           hx-swap="innerHTML"
+           hx-indicator="#nav-loading">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1v-10.5z"/>
+          </svg>
+          Inicio
+        </a>
+        <a href="#" class="nav-link"
+           hx-get="/vistas/compras"
+           hx-target="#contenido"
+           hx-swap="innerHTML"
+           hx-indicator="#nav-loading">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 6h15l-1.5 9h-12L6 6zm0 0L5 3H2"/>
+            <circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/>
+          </svg>
+          Compras
+        </a>
+        <a href="#" class="nav-link"
+           hx-get="/vistas/inventario"
+           hx-target="#contenido"
+           hx-swap="innerHTML"
+           hx-indicator="#nav-loading">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <path d="M3.3 7 12 12l8.7-5M12 22V12"/>
+          </svg>
+          Inventario
+        </a>
+        <a href="#" class="nav-link"
+           hx-get="/vistas/activos"
+           hx-target="#contenido"
+           hx-swap="innerHTML"
+           hx-indicator="#nav-loading">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="14" rx="2"/>
+            <path d="M8 21h8M12 18v3"/>
+          </svg>
+          Activos fijos
+        </a>
+        <a href="#" class="nav-link"
+           hx-get="/vistas/almacenes"
+           hx-target="#contenido"
+           hx-swap="innerHTML"
+           hx-indicator="#nav-loading">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 21V8l9-5 9 5v13"/>
+            <path d="M9 21v-8h6v8"/>
+          </svg>
+          Almacenes
+        </a>
+      </nav>
+
+      <div class="sidebar-foot">
+        Compras · Inventario · Activos · Bodegas
+      </div>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <div class="topbar-title" id="vista-titulo">Panel</div>
+        <div id="nav-loading" class="htmx-indicator">
+          <span class="spinner" aria-hidden="true"></span>
+          Cargando…
+        </div>
+      </header>
+
+      <section id="contenido"
+               hx-get="/vistas/inicio"
+               hx-trigger="load"
+               hx-swap="innerHTML"
+               hx-indicator="#nav-loading">
+        {% block content %}{% endblock %}
+      </section>
+    </div>
+  </div>
+
+  <script>
+    var TITULOS = {
+      "/vistas/inicio": "Panel",
+      "/vistas/compras": "Compras",
+      "/vistas/inventario": "Inventario",
+      "/vistas/activos": "Activos fijos",
+      "/vistas/almacenes": "Almacenes"
+    };
+
+    document.body.addEventListener("htmx:afterOnLoad", function (evt) {
+      var path = evt.detail.pathInfo && evt.detail.pathInfo.requestPath;
+      if (!path) return;
+
+      if (path.indexOf("/vistas/") === 0) {
+        document.querySelectorAll(".nav-link").forEach(function (a) {
+          a.classList.toggle("active", a.getAttribute("hx-get") === path);
+        });
+        var titulo = document.getElementById("vista-titulo");
+        if (titulo && TITULOS[path]) titulo.textContent = TITULOS[path];
+      } else {
+        /* Tras POST, la respuesta es una vista; marcar nav según el swap */
+        var target = evt.detail.target;
+        if (target && target.id === "contenido") {
+          var vista = target.querySelector("[id^='vista-']");
+          if (!vista) return;
+          var map = {
+            "vista-compras": "/vistas/compras",
+            "vista-inventario": "/vistas/inventario",
+            "vista-activos": "/vistas/activos",
+            "vista-almacenes": "/vistas/almacenes",
+            "vista-inicio": "/vistas/inicio"
+          };
+          var vistaPath = map[vista.id];
+          if (!vistaPath) return;
+          document.querySelectorAll(".nav-link").forEach(function (a) {
+            a.classList.toggle("active", a.getAttribute("hx-get") === vistaPath);
+          });
+          var t = document.getElementById("vista-titulo");
+          if (t && TITULOS[vistaPath]) t.textContent = TITULOS[vistaPath];
+        }
+      }
+    });
+  </script>
+</body>
+</html>

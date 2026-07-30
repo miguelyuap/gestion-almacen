@@ -1,0 +1,66 @@
+<section id="vista-almacenes">
+  <header class="page-header">
+    <h2>Almacenes / Bodegas</h2>
+    <p>Ubicaciones físicas donde se almacena el inventario consumible.</p>
+  </header>
+
+  <details class="panel" open>
+    <summary class="panel-header">Registrar almacén</summary>
+    <div class="panel-body">
+      <form class="inline-grid"
+            hx-post="/almacenes"
+            hx-target="#contenido"
+            hx-swap="innerHTML"
+            hx-indicator="#nav-loading">
+        <label>
+          Nombre
+          <input type="text" name="nombre" required placeholder="Bodega Norte" />
+        </label>
+        <label>
+          Ubicación
+          <input type="text" name="ubicacion" placeholder="Planta baja, sector B" />
+        </label>
+        <button type="submit">Guardar</button>
+      </form>
+    </div>
+  </details>
+
+  <div class="panel">
+    <div class="panel-header">
+      <h3>Listado de almacenes</h3>
+    </div>
+    <div class="panel-body tight">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Ubicación</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if almacenes %}
+              {% for a in almacenes %}
+              <tr>
+                <td><code>{{ a.id }}</code></td>
+                <td>{{ a.nombre }}</td>
+                <td>{{ a.ubicacion or "—" }}</td>
+              </tr>
+              {% endfor %}
+            {% else %}
+              <tr>
+                <td colspan="3">
+                  <div class="empty-state">
+                    <strong>Sin almacenes</strong>
+                    <p>Registra la primera bodega para ubicar el inventario.</p>
+                  </div>
+                </td>
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
