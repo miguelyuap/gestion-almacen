@@ -1,5 +1,285 @@
 ('C:\\proyectos\\gestion-almacen\\build\\GestionAlmacen\\PYZ-00.pyz',
- [('__future__',
+ [('PIL',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\__init__.py',
+   'PYMODULE'),
+  ('PIL.BlpImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\BlpImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.BmpImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\BmpImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.BufrStubImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\BufrStubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.CurImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\CurImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.DcxImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\DcxImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.DdsImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\DdsImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.EpsImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\EpsImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FitsImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\FitsImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FitsStubImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\FitsStubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FliImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\FliImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FpxImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\FpxImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.FtexImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\FtexImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.GbrImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\GbrImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.GifImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\GifImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.GimpGradientFile',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\GimpGradientFile.py',
+   'PYMODULE'),
+  ('PIL.GimpPaletteFile',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\GimpPaletteFile.py',
+   'PYMODULE'),
+  ('PIL.GribStubImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\GribStubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.Hdf5StubImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\Hdf5StubImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.IcnsImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\IcnsImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.IcoImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\IcoImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.ImImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\ImImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.Image',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\Image.py',
+   'PYMODULE'),
+  ('PIL.ImageChops',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\ImageChops.py',
+   'PYMODULE'),
+  ('PIL.ImageColor',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\ImageColor.py',
+   'PYMODULE'),
+  ('PIL.ImageFile',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\ImageFile.py',
+   'PYMODULE'),
+  ('PIL.ImageFilter',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\ImageFilter.py',
+   'PYMODULE'),
+  ('PIL.ImageMode',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\ImageMode.py',
+   'PYMODULE'),
+  ('PIL.ImageOps',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\ImageOps.py',
+   'PYMODULE'),
+  ('PIL.ImagePalette',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\ImagePalette.py',
+   'PYMODULE'),
+  ('PIL.ImageQt',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\ImageQt.py',
+   'PYMODULE'),
+  ('PIL.ImageSequence',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\ImageSequence.py',
+   'PYMODULE'),
+  ('PIL.ImageShow',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\ImageShow.py',
+   'PYMODULE'),
+  ('PIL.ImageTk',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\ImageTk.py',
+   'PYMODULE'),
+  ('PIL.ImtImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\ImtImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.IptcImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\IptcImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.Jpeg2KImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\Jpeg2KImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.JpegImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\JpegImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.JpegPresets',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\JpegPresets.py',
+   'PYMODULE'),
+  ('PIL.McIdasImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\McIdasImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MicImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\MicImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MpegImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\MpegImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MpoImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\MpoImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.MspImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\MspImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PaletteFile',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\PaletteFile.py',
+   'PYMODULE'),
+  ('PIL.PalmImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\PalmImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PcdImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\PcdImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PcxImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\PcxImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PdfImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\PdfImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PdfParser',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\PdfParser.py',
+   'PYMODULE'),
+  ('PIL.PixarImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\PixarImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PngImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\PngImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PpmImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\PpmImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PsdImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\PsdImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.PyAccess',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\PyAccess.py',
+   'PYMODULE'),
+  ('PIL.SgiImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\SgiImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.SpiderImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\SpiderImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.SunImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\SunImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.TgaImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\TgaImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.TiffImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\TiffImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.TiffTags',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\TiffTags.py',
+   'PYMODULE'),
+  ('PIL.WebPImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\WebPImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.WmfImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\WmfImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.XVThumbImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\XVThumbImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.XbmImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\XbmImagePlugin.py',
+   'PYMODULE'),
+  ('PIL.XpmImagePlugin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\XpmImagePlugin.py',
+   'PYMODULE'),
+  ('PIL._binary',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\_binary.py',
+   'PYMODULE'),
+  ('PIL._util',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\_util.py',
+   'PYMODULE'),
+  ('PIL._version',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\_version.py',
+   'PYMODULE'),
+  ('PIL.features',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\features.py',
+   'PYMODULE'),
+  ('__future__',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\__future__.py',
    'PYMODULE'),
@@ -18,6 +298,10 @@
   ('_compression',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\_compression.py',
+   'PYMODULE'),
+  ('_markupbase',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\_markupbase.py',
    'PYMODULE'),
   ('_py_abc',
    'C:\\Users\\Miguel '
@@ -197,6 +481,50 @@
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\calendar.py',
    'PYMODULE'),
+  ('cgi',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\cgi.py',
+   'PYMODULE'),
+  ('charset_normalizer',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\charset_normalizer\\__init__.py',
+   'PYMODULE'),
+  ('charset_normalizer.api',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\charset_normalizer\\api.py',
+   'PYMODULE'),
+  ('charset_normalizer.assets',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\charset_normalizer\\assets\\__init__.py',
+   'PYMODULE'),
+  ('charset_normalizer.cd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\charset_normalizer\\cd.py',
+   'PYMODULE'),
+  ('charset_normalizer.constant',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\charset_normalizer\\constant.py',
+   'PYMODULE'),
+  ('charset_normalizer.legacy',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\charset_normalizer\\legacy.py',
+   'PYMODULE'),
+  ('charset_normalizer.md',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\charset_normalizer\\md.py',
+   'PYMODULE'),
+  ('charset_normalizer.models',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\charset_normalizer\\models.py',
+   'PYMODULE'),
+  ('charset_normalizer.utils',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\charset_normalizer\\utils.py',
+   'PYMODULE'),
+  ('charset_normalizer.version',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\charset_normalizer\\version.py',
+   'PYMODULE'),
   ('click',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\click\\__init__.py',
@@ -301,6 +629,10 @@
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\colorama\\winterm.py',
    'PYMODULE'),
+  ('colorsys',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\colorsys.py',
+   'PYMODULE'),
   ('concurrent',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\concurrent\\__init__.py',
@@ -341,9 +673,33 @@
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\ctypes\\__init__.py',
    'PYMODULE'),
+  ('ctypes._aix',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\ctypes\\_aix.py',
+   'PYMODULE'),
   ('ctypes._endian',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\ctypes\\_endian.py',
+   'PYMODULE'),
+  ('ctypes.macholib',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\ctypes\\macholib\\__init__.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dyld',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\ctypes\\macholib\\dyld.py',
+   'PYMODULE'),
+  ('ctypes.macholib.dylib',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\ctypes\\macholib\\dylib.py',
+   'PYMODULE'),
+  ('ctypes.macholib.framework',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\ctypes\\macholib\\framework.py',
+   'PYMODULE'),
+  ('ctypes.util',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\ctypes\\util.py',
    'PYMODULE'),
   ('ctypes.wintypes',
    'C:\\Users\\Miguel '
@@ -368,6 +724,10 @@
   ('dis',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\dis.py',
+   'PYMODULE'),
+  ('doctest',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\doctest.py',
    'PYMODULE'),
   ('email',
    'C:\\Users\\Miguel '
@@ -448,6 +808,18 @@
   ('email.utils',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\email\\utils.py',
+   'PYMODULE'),
+  ('et_xmlfile',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\et_xmlfile\\__init__.py',
+   'PYMODULE'),
+  ('et_xmlfile.incremental_tree',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\et_xmlfile\\incremental_tree.py',
+   'PYMODULE'),
+  ('et_xmlfile.xmlfile',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\et_xmlfile\\xmlfile.py',
    'PYMODULE'),
   ('flask',
    'C:\\Users\\Miguel '
@@ -585,6 +957,10 @@
   ('html.entities',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\html\\entities.py',
+   'PYMODULE'),
+  ('html.parser',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\html\\parser.py',
    'PYMODULE'),
   ('http',
    'C:\\Users\\Miguel '
@@ -810,6 +1186,102 @@
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\logging\\__init__.py',
    'PYMODULE'),
+  ('lxml',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\__init__.py',
+   'PYMODULE'),
+  ('lxml.ElementInclude',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\ElementInclude.py',
+   'PYMODULE'),
+  ('lxml.cssselect',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\cssselect.py',
+   'PYMODULE'),
+  ('lxml.doctestcompare',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\doctestcompare.py',
+   'PYMODULE'),
+  ('lxml.html',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\__init__.py',
+   'PYMODULE'),
+  ('lxml.html.ElementSoup',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\ElementSoup.py',
+   'PYMODULE'),
+  ('lxml.html._diffcommand',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\_diffcommand.py',
+   'PYMODULE'),
+  ('lxml.html._html5builder',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\_html5builder.py',
+   'PYMODULE'),
+  ('lxml.html._setmixin',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\_setmixin.py',
+   'PYMODULE'),
+  ('lxml.html.builder',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\builder.py',
+   'PYMODULE'),
+  ('lxml.html.clean',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\clean.py',
+   'PYMODULE'),
+  ('lxml.html.defs',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\defs.py',
+   'PYMODULE'),
+  ('lxml.html.formfill',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\formfill.py',
+   'PYMODULE'),
+  ('lxml.html.html5parser',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\html5parser.py',
+   'PYMODULE'),
+  ('lxml.html.soupparser',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\soupparser.py',
+   'PYMODULE'),
+  ('lxml.html.usedoctest',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\usedoctest.py',
+   'PYMODULE'),
+  ('lxml.includes',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\includes\\__init__.py',
+   'PYMODULE'),
+  ('lxml.includes.extlibs',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\includes\\extlibs\\__init__.py',
+   'PYMODULE'),
+  ('lxml.includes.libexslt',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\includes\\libexslt\\__init__.py',
+   'PYMODULE'),
+  ('lxml.includes.libxml',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\includes\\libxml\\__init__.py',
+   'PYMODULE'),
+  ('lxml.includes.libxslt',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\includes\\libxslt\\__init__.py',
+   'PYMODULE'),
+  ('lxml.isoschematron',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\isoschematron\\__init__.py',
+   'PYMODULE'),
+  ('lxml.pyclasslookup',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\pyclasslookup.py',
+   'PYMODULE'),
+  ('lxml.usedoctest',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\usedoctest.py',
+   'PYMODULE'),
   ('lzma',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\lzma.py',
@@ -930,9 +1402,1181 @@
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\numbers.py',
    'PYMODULE'),
+  ('numpy',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\__init__.py',
+   'PYMODULE'),
+  ('numpy.__config__',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\__config__.py',
+   'PYMODULE'),
+  ('numpy._distributor_init',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_distributor_init.py',
+   'PYMODULE'),
+  ('numpy._globals',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_globals.py',
+   'PYMODULE'),
+  ('numpy._pytesttester',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_pytesttester.py',
+   'PYMODULE'),
+  ('numpy._typing',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_typing\\__init__.py',
+   'PYMODULE'),
+  ('numpy._typing._add_docstring',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_typing\\_add_docstring.py',
+   'PYMODULE'),
+  ('numpy._typing._array_like',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_typing\\_array_like.py',
+   'PYMODULE'),
+  ('numpy._typing._char_codes',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_typing\\_char_codes.py',
+   'PYMODULE'),
+  ('numpy._typing._dtype_like',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_typing\\_dtype_like.py',
+   'PYMODULE'),
+  ('numpy._typing._nbit',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_typing\\_nbit.py',
+   'PYMODULE'),
+  ('numpy._typing._nested_sequence',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_typing\\_nested_sequence.py',
+   'PYMODULE'),
+  ('numpy._typing._scalars',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_typing\\_scalars.py',
+   'PYMODULE'),
+  ('numpy._typing._shape',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_typing\\_shape.py',
+   'PYMODULE'),
+  ('numpy._utils',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_utils\\__init__.py',
+   'PYMODULE'),
+  ('numpy._utils._convertions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_utils\\_convertions.py',
+   'PYMODULE'),
+  ('numpy._utils._inspect',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\_utils\\_inspect.py',
+   'PYMODULE'),
+  ('numpy.array_api',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\__init__.py',
+   'PYMODULE'),
+  ('numpy.array_api._array_object',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_array_object.py',
+   'PYMODULE'),
+  ('numpy.array_api._constants',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_constants.py',
+   'PYMODULE'),
+  ('numpy.array_api._creation_functions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_creation_functions.py',
+   'PYMODULE'),
+  ('numpy.array_api._data_type_functions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_data_type_functions.py',
+   'PYMODULE'),
+  ('numpy.array_api._dtypes',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_dtypes.py',
+   'PYMODULE'),
+  ('numpy.array_api._elementwise_functions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_elementwise_functions.py',
+   'PYMODULE'),
+  ('numpy.array_api._indexing_functions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_indexing_functions.py',
+   'PYMODULE'),
+  ('numpy.array_api._manipulation_functions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_manipulation_functions.py',
+   'PYMODULE'),
+  ('numpy.array_api._searching_functions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_searching_functions.py',
+   'PYMODULE'),
+  ('numpy.array_api._set_functions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_set_functions.py',
+   'PYMODULE'),
+  ('numpy.array_api._sorting_functions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_sorting_functions.py',
+   'PYMODULE'),
+  ('numpy.array_api._statistical_functions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_statistical_functions.py',
+   'PYMODULE'),
+  ('numpy.array_api._typing',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_typing.py',
+   'PYMODULE'),
+  ('numpy.array_api._utility_functions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\_utility_functions.py',
+   'PYMODULE'),
+  ('numpy.array_api.linalg',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\array_api\\linalg.py',
+   'PYMODULE'),
+  ('numpy.compat',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\compat\\__init__.py',
+   'PYMODULE'),
+  ('numpy.compat.py3k',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\compat\\py3k.py',
+   'PYMODULE'),
+  ('numpy.core',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\__init__.py',
+   'PYMODULE'),
+  ('numpy.core._add_newdocs',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_add_newdocs.py',
+   'PYMODULE'),
+  ('numpy.core._add_newdocs_scalars',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_add_newdocs_scalars.py',
+   'PYMODULE'),
+  ('numpy.core._asarray',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_asarray.py',
+   'PYMODULE'),
+  ('numpy.core._dtype',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_dtype.py',
+   'PYMODULE'),
+  ('numpy.core._dtype_ctypes',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_dtype_ctypes.py',
+   'PYMODULE'),
+  ('numpy.core._exceptions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_exceptions.py',
+   'PYMODULE'),
+  ('numpy.core._internal',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_internal.py',
+   'PYMODULE'),
+  ('numpy.core._machar',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_machar.py',
+   'PYMODULE'),
+  ('numpy.core._methods',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_methods.py',
+   'PYMODULE'),
+  ('numpy.core._string_helpers',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_string_helpers.py',
+   'PYMODULE'),
+  ('numpy.core._type_aliases',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_type_aliases.py',
+   'PYMODULE'),
+  ('numpy.core._ufunc_config',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_ufunc_config.py',
+   'PYMODULE'),
+  ('numpy.core.arrayprint',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\arrayprint.py',
+   'PYMODULE'),
+  ('numpy.core.defchararray',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\defchararray.py',
+   'PYMODULE'),
+  ('numpy.core.einsumfunc',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\einsumfunc.py',
+   'PYMODULE'),
+  ('numpy.core.fromnumeric',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\fromnumeric.py',
+   'PYMODULE'),
+  ('numpy.core.function_base',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\function_base.py',
+   'PYMODULE'),
+  ('numpy.core.getlimits',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\getlimits.py',
+   'PYMODULE'),
+  ('numpy.core.memmap',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\memmap.py',
+   'PYMODULE'),
+  ('numpy.core.multiarray',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\multiarray.py',
+   'PYMODULE'),
+  ('numpy.core.numeric',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\numeric.py',
+   'PYMODULE'),
+  ('numpy.core.numerictypes',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\numerictypes.py',
+   'PYMODULE'),
+  ('numpy.core.overrides',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\overrides.py',
+   'PYMODULE'),
+  ('numpy.core.records',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\records.py',
+   'PYMODULE'),
+  ('numpy.core.shape_base',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\shape_base.py',
+   'PYMODULE'),
+  ('numpy.core.umath',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\umath.py',
+   'PYMODULE'),
+  ('numpy.ctypeslib',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\ctypeslib.py',
+   'PYMODULE'),
+  ('numpy.dtypes',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\dtypes.py',
+   'PYMODULE'),
+  ('numpy.exceptions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\exceptions.py',
+   'PYMODULE'),
+  ('numpy.fft',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\fft\\__init__.py',
+   'PYMODULE'),
+  ('numpy.fft._pocketfft',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\fft\\_pocketfft.py',
+   'PYMODULE'),
+  ('numpy.fft.helper',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\fft\\helper.py',
+   'PYMODULE'),
+  ('numpy.lib',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\__init__.py',
+   'PYMODULE'),
+  ('numpy.lib._datasource',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\_datasource.py',
+   'PYMODULE'),
+  ('numpy.lib._iotools',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\_iotools.py',
+   'PYMODULE'),
+  ('numpy.lib._version',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\_version.py',
+   'PYMODULE'),
+  ('numpy.lib.arraypad',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\arraypad.py',
+   'PYMODULE'),
+  ('numpy.lib.arraysetops',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\arraysetops.py',
+   'PYMODULE'),
+  ('numpy.lib.arrayterator',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\arrayterator.py',
+   'PYMODULE'),
+  ('numpy.lib.format',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\format.py',
+   'PYMODULE'),
+  ('numpy.lib.function_base',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\function_base.py',
+   'PYMODULE'),
+  ('numpy.lib.histograms',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\histograms.py',
+   'PYMODULE'),
+  ('numpy.lib.index_tricks',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\index_tricks.py',
+   'PYMODULE'),
+  ('numpy.lib.mixins',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\mixins.py',
+   'PYMODULE'),
+  ('numpy.lib.nanfunctions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\nanfunctions.py',
+   'PYMODULE'),
+  ('numpy.lib.npyio',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\npyio.py',
+   'PYMODULE'),
+  ('numpy.lib.polynomial',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\polynomial.py',
+   'PYMODULE'),
+  ('numpy.lib.recfunctions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\recfunctions.py',
+   'PYMODULE'),
+  ('numpy.lib.scimath',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\scimath.py',
+   'PYMODULE'),
+  ('numpy.lib.shape_base',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\shape_base.py',
+   'PYMODULE'),
+  ('numpy.lib.stride_tricks',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\stride_tricks.py',
+   'PYMODULE'),
+  ('numpy.lib.twodim_base',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\twodim_base.py',
+   'PYMODULE'),
+  ('numpy.lib.type_check',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\type_check.py',
+   'PYMODULE'),
+  ('numpy.lib.ufunclike',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\ufunclike.py',
+   'PYMODULE'),
+  ('numpy.lib.utils',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\lib\\utils.py',
+   'PYMODULE'),
+  ('numpy.linalg',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\linalg\\__init__.py',
+   'PYMODULE'),
+  ('numpy.linalg.linalg',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\linalg\\linalg.py',
+   'PYMODULE'),
+  ('numpy.ma',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\ma\\__init__.py',
+   'PYMODULE'),
+  ('numpy.ma.core',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\ma\\core.py',
+   'PYMODULE'),
+  ('numpy.ma.extras',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\ma\\extras.py',
+   'PYMODULE'),
+  ('numpy.ma.mrecords',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\ma\\mrecords.py',
+   'PYMODULE'),
+  ('numpy.matrixlib',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\matrixlib\\__init__.py',
+   'PYMODULE'),
+  ('numpy.matrixlib.defmatrix',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\matrixlib\\defmatrix.py',
+   'PYMODULE'),
+  ('numpy.polynomial',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\polynomial\\__init__.py',
+   'PYMODULE'),
+  ('numpy.polynomial._polybase',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\polynomial\\_polybase.py',
+   'PYMODULE'),
+  ('numpy.polynomial.chebyshev',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\polynomial\\chebyshev.py',
+   'PYMODULE'),
+  ('numpy.polynomial.hermite',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\polynomial\\hermite.py',
+   'PYMODULE'),
+  ('numpy.polynomial.hermite_e',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\polynomial\\hermite_e.py',
+   'PYMODULE'),
+  ('numpy.polynomial.laguerre',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\polynomial\\laguerre.py',
+   'PYMODULE'),
+  ('numpy.polynomial.legendre',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\polynomial\\legendre.py',
+   'PYMODULE'),
+  ('numpy.polynomial.polynomial',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\polynomial\\polynomial.py',
+   'PYMODULE'),
+  ('numpy.polynomial.polyutils',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\polynomial\\polyutils.py',
+   'PYMODULE'),
+  ('numpy.random',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\random\\__init__.py',
+   'PYMODULE'),
+  ('numpy.random._pickle',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\random\\_pickle.py',
+   'PYMODULE'),
+  ('numpy.testing',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\testing\\__init__.py',
+   'PYMODULE'),
+  ('numpy.testing._private',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\testing\\_private\\__init__.py',
+   'PYMODULE'),
+  ('numpy.testing._private.extbuild',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\testing\\_private\\extbuild.py',
+   'PYMODULE'),
+  ('numpy.testing._private.utils',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\testing\\_private\\utils.py',
+   'PYMODULE'),
+  ('numpy.testing.overrides',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\testing\\overrides.py',
+   'PYMODULE'),
+  ('numpy.typing',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\typing\\__init__.py',
+   'PYMODULE'),
+  ('numpy.version',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\version.py',
+   'PYMODULE'),
   ('opcode',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\opcode.py',
+   'PYMODULE'),
+  ('openpyxl',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl._constants',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\_constants.py',
+   'PYMODULE'),
+  ('openpyxl.cell',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\cell\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.cell._writer',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\cell\\_writer.py',
+   'PYMODULE'),
+  ('openpyxl.cell.cell',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\cell\\cell.py',
+   'PYMODULE'),
+  ('openpyxl.cell.read_only',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\cell\\read_only.py',
+   'PYMODULE'),
+  ('openpyxl.cell.rich_text',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\cell\\rich_text.py',
+   'PYMODULE'),
+  ('openpyxl.cell.text',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\cell\\text.py',
+   'PYMODULE'),
+  ('openpyxl.chart',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.chart._3d',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\_3d.py',
+   'PYMODULE'),
+  ('openpyxl.chart._chart',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.area_chart',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\area_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.axis',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\axis.py',
+   'PYMODULE'),
+  ('openpyxl.chart.bar_chart',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\bar_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.bubble_chart',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\bubble_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.chartspace',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\chartspace.py',
+   'PYMODULE'),
+  ('openpyxl.chart.data_source',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\data_source.py',
+   'PYMODULE'),
+  ('openpyxl.chart.descriptors',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\descriptors.py',
+   'PYMODULE'),
+  ('openpyxl.chart.error_bar',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\error_bar.py',
+   'PYMODULE'),
+  ('openpyxl.chart.label',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\label.py',
+   'PYMODULE'),
+  ('openpyxl.chart.layout',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\layout.py',
+   'PYMODULE'),
+  ('openpyxl.chart.legend',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\legend.py',
+   'PYMODULE'),
+  ('openpyxl.chart.line_chart',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\line_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.marker',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\marker.py',
+   'PYMODULE'),
+  ('openpyxl.chart.picture',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\picture.py',
+   'PYMODULE'),
+  ('openpyxl.chart.pie_chart',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\pie_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.pivot',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\pivot.py',
+   'PYMODULE'),
+  ('openpyxl.chart.plotarea',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\plotarea.py',
+   'PYMODULE'),
+  ('openpyxl.chart.print_settings',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\print_settings.py',
+   'PYMODULE'),
+  ('openpyxl.chart.radar_chart',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\radar_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.reader',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\reader.py',
+   'PYMODULE'),
+  ('openpyxl.chart.reference',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\reference.py',
+   'PYMODULE'),
+  ('openpyxl.chart.scatter_chart',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\scatter_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.series',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\series.py',
+   'PYMODULE'),
+  ('openpyxl.chart.series_factory',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\series_factory.py',
+   'PYMODULE'),
+  ('openpyxl.chart.shapes',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\shapes.py',
+   'PYMODULE'),
+  ('openpyxl.chart.stock_chart',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\stock_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.surface_chart',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\surface_chart.py',
+   'PYMODULE'),
+  ('openpyxl.chart.text',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\text.py',
+   'PYMODULE'),
+  ('openpyxl.chart.title',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\title.py',
+   'PYMODULE'),
+  ('openpyxl.chart.trendline',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\trendline.py',
+   'PYMODULE'),
+  ('openpyxl.chart.updown_bars',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chart\\updown_bars.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chartsheet\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.chartsheet',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chartsheet\\chartsheet.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.custom',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chartsheet\\custom.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.properties',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chartsheet\\properties.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.protection',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chartsheet\\protection.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.publish',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chartsheet\\publish.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.relation',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chartsheet\\relation.py',
+   'PYMODULE'),
+  ('openpyxl.chartsheet.views',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\chartsheet\\views.py',
+   'PYMODULE'),
+  ('openpyxl.comments',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\comments\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.comments.author',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\comments\\author.py',
+   'PYMODULE'),
+  ('openpyxl.comments.comment_sheet',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\comments\\comment_sheet.py',
+   'PYMODULE'),
+  ('openpyxl.comments.comments',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\comments\\comments.py',
+   'PYMODULE'),
+  ('openpyxl.comments.shape_writer',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\comments\\shape_writer.py',
+   'PYMODULE'),
+  ('openpyxl.compat',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\compat\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.compat.numbers',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\compat\\numbers.py',
+   'PYMODULE'),
+  ('openpyxl.compat.strings',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\compat\\strings.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\descriptors\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors.base',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\descriptors\\base.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors.container',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\descriptors\\container.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors.excel',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\descriptors\\excel.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors.namespace',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\descriptors\\namespace.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors.nested',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\descriptors\\nested.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors.sequence',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\descriptors\\sequence.py',
+   'PYMODULE'),
+  ('openpyxl.descriptors.serialisable',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\descriptors\\serialisable.py',
+   'PYMODULE'),
+  ('openpyxl.drawing',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.colors',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\colors.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.connector',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\connector.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.drawing',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\drawing.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.effect',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\effect.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.fill',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\fill.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.geometry',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\geometry.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.graphic',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\graphic.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.image',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\image.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.line',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\line.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.picture',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\picture.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.properties',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\properties.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.relation',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\relation.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.spreadsheet_drawing',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\spreadsheet_drawing.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.text',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\text.py',
+   'PYMODULE'),
+  ('openpyxl.drawing.xdr',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\drawing\\xdr.py',
+   'PYMODULE'),
+  ('openpyxl.formatting',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\formatting\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.formatting.formatting',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\formatting\\formatting.py',
+   'PYMODULE'),
+  ('openpyxl.formatting.rule',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\formatting\\rule.py',
+   'PYMODULE'),
+  ('openpyxl.formula',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\formula\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.formula.tokenizer',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\formula\\tokenizer.py',
+   'PYMODULE'),
+  ('openpyxl.formula.translate',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\formula\\translate.py',
+   'PYMODULE'),
+  ('openpyxl.packaging',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\packaging\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.packaging.core',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\packaging\\core.py',
+   'PYMODULE'),
+  ('openpyxl.packaging.custom',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\packaging\\custom.py',
+   'PYMODULE'),
+  ('openpyxl.packaging.extended',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\packaging\\extended.py',
+   'PYMODULE'),
+  ('openpyxl.packaging.manifest',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\packaging\\manifest.py',
+   'PYMODULE'),
+  ('openpyxl.packaging.relationship',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\packaging\\relationship.py',
+   'PYMODULE'),
+  ('openpyxl.packaging.workbook',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\packaging\\workbook.py',
+   'PYMODULE'),
+  ('openpyxl.pivot',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\pivot\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.pivot.cache',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\pivot\\cache.py',
+   'PYMODULE'),
+  ('openpyxl.pivot.fields',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\pivot\\fields.py',
+   'PYMODULE'),
+  ('openpyxl.pivot.record',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\pivot\\record.py',
+   'PYMODULE'),
+  ('openpyxl.pivot.table',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\pivot\\table.py',
+   'PYMODULE'),
+  ('openpyxl.reader',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\reader\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.reader.drawings',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\reader\\drawings.py',
+   'PYMODULE'),
+  ('openpyxl.reader.excel',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\reader\\excel.py',
+   'PYMODULE'),
+  ('openpyxl.reader.strings',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\reader\\strings.py',
+   'PYMODULE'),
+  ('openpyxl.reader.workbook',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\reader\\workbook.py',
+   'PYMODULE'),
+  ('openpyxl.styles',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.styles.alignment',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\alignment.py',
+   'PYMODULE'),
+  ('openpyxl.styles.borders',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\borders.py',
+   'PYMODULE'),
+  ('openpyxl.styles.builtins',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\builtins.py',
+   'PYMODULE'),
+  ('openpyxl.styles.cell_style',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\cell_style.py',
+   'PYMODULE'),
+  ('openpyxl.styles.colors',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\colors.py',
+   'PYMODULE'),
+  ('openpyxl.styles.differential',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\differential.py',
+   'PYMODULE'),
+  ('openpyxl.styles.fills',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\fills.py',
+   'PYMODULE'),
+  ('openpyxl.styles.fonts',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\fonts.py',
+   'PYMODULE'),
+  ('openpyxl.styles.named_styles',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\named_styles.py',
+   'PYMODULE'),
+  ('openpyxl.styles.numbers',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\numbers.py',
+   'PYMODULE'),
+  ('openpyxl.styles.protection',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\protection.py',
+   'PYMODULE'),
+  ('openpyxl.styles.proxy',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\proxy.py',
+   'PYMODULE'),
+  ('openpyxl.styles.styleable',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\styleable.py',
+   'PYMODULE'),
+  ('openpyxl.styles.stylesheet',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\stylesheet.py',
+   'PYMODULE'),
+  ('openpyxl.styles.table',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\styles\\table.py',
+   'PYMODULE'),
+  ('openpyxl.utils',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\utils\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.utils.bound_dictionary',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\utils\\bound_dictionary.py',
+   'PYMODULE'),
+  ('openpyxl.utils.cell',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\utils\\cell.py',
+   'PYMODULE'),
+  ('openpyxl.utils.datetime',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\utils\\datetime.py',
+   'PYMODULE'),
+  ('openpyxl.utils.escape',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\utils\\escape.py',
+   'PYMODULE'),
+  ('openpyxl.utils.exceptions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\utils\\exceptions.py',
+   'PYMODULE'),
+  ('openpyxl.utils.formulas',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\utils\\formulas.py',
+   'PYMODULE'),
+  ('openpyxl.utils.indexed_list',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\utils\\indexed_list.py',
+   'PYMODULE'),
+  ('openpyxl.utils.protection',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\utils\\protection.py',
+   'PYMODULE'),
+  ('openpyxl.utils.units',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\utils\\units.py',
+   'PYMODULE'),
+  ('openpyxl.workbook',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.workbook._writer',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\_writer.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.child',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\child.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.defined_name',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\defined_name.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.external_link',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\external_link\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.external_link.external',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\external_link\\external.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.external_reference',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\external_reference.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.function_group',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\function_group.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.properties',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\properties.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.protection',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\protection.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.smart_tags',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\smart_tags.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.views',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\views.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.web',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\web.py',
+   'PYMODULE'),
+  ('openpyxl.workbook.workbook',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\workbook\\workbook.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet._read_only',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\_read_only.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet._reader',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\_reader.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet._write_only',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\_write_only.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet._writer',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\_writer.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.cell_range',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\cell_range.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.copier',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\copier.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.datavalidation',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\datavalidation.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.dimensions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\dimensions.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.drawing',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\drawing.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.filters',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\filters.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.formula',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\formula.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.header_footer',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\header_footer.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.hyperlink',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\hyperlink.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.merge',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\merge.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.page',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\page.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.pagebreak',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\pagebreak.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.print_settings',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\print_settings.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.properties',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\properties.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.protection',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\protection.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.related',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\related.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.scenario',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\scenario.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.table',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\table.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.views',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\views.py',
+   'PYMODULE'),
+  ('openpyxl.worksheet.worksheet',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\worksheet\\worksheet.py',
+   'PYMODULE'),
+  ('openpyxl.writer',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\writer\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.writer.excel',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\writer\\excel.py',
+   'PYMODULE'),
+  ('openpyxl.writer.theme',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\writer\\theme.py',
+   'PYMODULE'),
+  ('openpyxl.xml',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\xml\\__init__.py',
+   'PYMODULE'),
+  ('openpyxl.xml.constants',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\xml\\constants.py',
+   'PYMODULE'),
+  ('openpyxl.xml.functions',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\openpyxl\\xml\\functions.py',
    'PYMODULE'),
   ('optparse',
    'C:\\Users\\Miguel '
@@ -962,6 +2606,22 @@
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\pprint.py',
    'PYMODULE'),
+  ('psutil',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\psutil\\__init__.py',
+   'PYMODULE'),
+  ('psutil._common',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\psutil\\_common.py',
+   'PYMODULE'),
+  ('psutil._compat',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\psutil\\_compat.py',
+   'PYMODULE'),
+  ('psutil._pswindows',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\psutil\\_pswindows.py',
+   'PYMODULE'),
   ('py_compile',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\py_compile.py',
@@ -989,6 +2649,395 @@
   ('random',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\random.py',
+   'PYMODULE'),
+  ('reportes', 'C:\\proyectos\\gestion-almacen\\reportes.py', 'PYMODULE'),
+  ('reportlab',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\__init__.py',
+   'PYMODULE'),
+  ('reportlab.graphics',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\__init__.py',
+   'PYMODULE'),
+  ('reportlab.graphics.charts',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\charts\\__init__.py',
+   'PYMODULE'),
+  ('reportlab.graphics.charts.areas',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\charts\\areas.py',
+   'PYMODULE'),
+  ('reportlab.graphics.charts.legends',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\charts\\legends.py',
+   'PYMODULE'),
+  ('reportlab.graphics.charts.piecharts',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\charts\\piecharts.py',
+   'PYMODULE'),
+  ('reportlab.graphics.charts.textlabels',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\charts\\textlabels.py',
+   'PYMODULE'),
+  ('reportlab.graphics.charts.utils',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\charts\\utils.py',
+   'PYMODULE'),
+  ('reportlab.graphics.charts.utils3d',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\charts\\utils3d.py',
+   'PYMODULE'),
+  ('reportlab.graphics.renderPDF',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\renderPDF.py',
+   'PYMODULE'),
+  ('reportlab.graphics.renderPM',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\renderPM.py',
+   'PYMODULE'),
+  ('reportlab.graphics.renderPS',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\renderPS.py',
+   'PYMODULE'),
+  ('reportlab.graphics.renderSVG',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\renderSVG.py',
+   'PYMODULE'),
+  ('reportlab.graphics.renderbase',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\renderbase.py',
+   'PYMODULE'),
+  ('reportlab.graphics.shapes',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\shapes.py',
+   'PYMODULE'),
+  ('reportlab.graphics.testshapes',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\testshapes.py',
+   'PYMODULE'),
+  ('reportlab.graphics.transform',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\transform.py',
+   'PYMODULE'),
+  ('reportlab.graphics.utils',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\utils.py',
+   'PYMODULE'),
+  ('reportlab.graphics.widgetbase',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\widgetbase.py',
+   'PYMODULE'),
+  ('reportlab.graphics.widgets',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\widgets\\__init__.py',
+   'PYMODULE'),
+  ('reportlab.graphics.widgets.flags',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\widgets\\flags.py',
+   'PYMODULE'),
+  ('reportlab.graphics.widgets.markers',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\widgets\\markers.py',
+   'PYMODULE'),
+  ('reportlab.graphics.widgets.signsandsymbols',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\graphics\\widgets\\signsandsymbols.py',
+   'PYMODULE'),
+  ('reportlab.lib',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\__init__.py',
+   'PYMODULE'),
+  ('reportlab.lib.PyFontify',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\PyFontify.py',
+   'PYMODULE'),
+  ('reportlab.lib.abag',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\abag.py',
+   'PYMODULE'),
+  ('reportlab.lib.arciv',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\arciv.py',
+   'PYMODULE'),
+  ('reportlab.lib.attrmap',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\attrmap.py',
+   'PYMODULE'),
+  ('reportlab.lib.boxstuff',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\boxstuff.py',
+   'PYMODULE'),
+  ('reportlab.lib.colors',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\colors.py',
+   'PYMODULE'),
+  ('reportlab.lib.corp',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\corp.py',
+   'PYMODULE'),
+  ('reportlab.lib.enums',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\enums.py',
+   'PYMODULE'),
+  ('reportlab.lib.fonts',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\fonts.py',
+   'PYMODULE'),
+  ('reportlab.lib.formatters',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\formatters.py',
+   'PYMODULE'),
+  ('reportlab.lib.geomutils',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\geomutils.py',
+   'PYMODULE'),
+  ('reportlab.lib.logger',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\logger.py',
+   'PYMODULE'),
+  ('reportlab.lib.normalDate',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\normalDate.py',
+   'PYMODULE'),
+  ('reportlab.lib.pagesizes',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\pagesizes.py',
+   'PYMODULE'),
+  ('reportlab.lib.pdfencrypt',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\pdfencrypt.py',
+   'PYMODULE'),
+  ('reportlab.lib.randomtext',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\randomtext.py',
+   'PYMODULE'),
+  ('reportlab.lib.rl_accel',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\rl_accel.py',
+   'PYMODULE'),
+  ('reportlab.lib.rl_safe_eval',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\rl_safe_eval.py',
+   'PYMODULE'),
+  ('reportlab.lib.rltempfile',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\rltempfile.py',
+   'PYMODULE'),
+  ('reportlab.lib.rparsexml',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\rparsexml.py',
+   'PYMODULE'),
+  ('reportlab.lib.sequencer',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\sequencer.py',
+   'PYMODULE'),
+  ('reportlab.lib.styles',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\styles.py',
+   'PYMODULE'),
+  ('reportlab.lib.textsplit',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\textsplit.py',
+   'PYMODULE'),
+  ('reportlab.lib.units',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\units.py',
+   'PYMODULE'),
+  ('reportlab.lib.utils',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\utils.py',
+   'PYMODULE'),
+  ('reportlab.lib.validators',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\lib\\validators.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\__init__.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_enc_macexpert',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_enc_macexpert.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_enc_macroman',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_enc_macroman.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_enc_pdfdoc',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_enc_pdfdoc.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_enc_standard',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_enc_standard.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_enc_symbol',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_enc_symbol.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_enc_winansi',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_enc_winansi.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_enc_zapfdingbats',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_enc_zapfdingbats.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_courier',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_courier.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_courierbold',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_courierbold.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_courierboldoblique',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_courierboldoblique.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_courieroblique',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_courieroblique.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_helvetica',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_helvetica.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_helveticabold',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_helveticabold.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_helveticaboldoblique',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_helveticaboldoblique.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_helveticaoblique',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_helveticaoblique.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_symbol',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_symbol.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_timesbold',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_timesbold.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_timesbolditalic',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_timesbolditalic.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_timesitalic',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_timesitalic.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_timesroman',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_timesroman.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._fontdata_widths_zapfdingbats',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_fontdata_widths_zapfdingbats.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase._glyphlist',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\_glyphlist.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase.acroform',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\acroform.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase.pdfdoc',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\pdfdoc.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase.pdfmetrics',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\pdfmetrics.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase.pdfutils',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\pdfutils.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase.rl_codecs',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\rl_codecs.py',
+   'PYMODULE'),
+  ('reportlab.pdfbase.ttfonts',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfbase\\ttfonts.py',
+   'PYMODULE'),
+  ('reportlab.pdfgen',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfgen\\__init__.py',
+   'PYMODULE'),
+  ('reportlab.pdfgen.canvas',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfgen\\canvas.py',
+   'PYMODULE'),
+  ('reportlab.pdfgen.pathobject',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfgen\\pathobject.py',
+   'PYMODULE'),
+  ('reportlab.pdfgen.pdfgeom',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfgen\\pdfgeom.py',
+   'PYMODULE'),
+  ('reportlab.pdfgen.pdfimages',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfgen\\pdfimages.py',
+   'PYMODULE'),
+  ('reportlab.pdfgen.textobject',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\pdfgen\\textobject.py',
+   'PYMODULE'),
+  ('reportlab.platypus',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\platypus\\__init__.py',
+   'PYMODULE'),
+  ('reportlab.platypus.doctemplate',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\platypus\\doctemplate.py',
+   'PYMODULE'),
+  ('reportlab.platypus.flowables',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\platypus\\flowables.py',
+   'PYMODULE'),
+  ('reportlab.platypus.frames',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\platypus\\frames.py',
+   'PYMODULE'),
+  ('reportlab.platypus.multicol',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\platypus\\multicol.py',
+   'PYMODULE'),
+  ('reportlab.platypus.paragraph',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\platypus\\paragraph.py',
+   'PYMODULE'),
+  ('reportlab.platypus.paraparser',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\platypus\\paraparser.py',
+   'PYMODULE'),
+  ('reportlab.platypus.tables',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\platypus\\tables.py',
+   'PYMODULE'),
+  ('reportlab.platypus.xpreformatted',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\platypus\\xpreformatted.py',
+   'PYMODULE'),
+  ('reportlab.rl_config',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\rl_config.py',
+   'PYMODULE'),
+  ('reportlab.rl_settings',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\reportlab\\rl_settings.py',
    'PYMODULE'),
   ('rlcompleter',
    'C:\\Users\\Miguel '
@@ -1078,6 +3127,10 @@
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\threading.py',
    'PYMODULE'),
+  ('threadpoolctl',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\threadpoolctl.py',
+   'PYMODULE'),
   ('token',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\token.py',
@@ -1101,6 +3154,50 @@
   ('typing_extensions',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\typing_extensions.py',
+   'PYMODULE'),
+  ('unittest',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\unittest\\__init__.py',
+   'PYMODULE'),
+  ('unittest._log',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\unittest\\_log.py',
+   'PYMODULE'),
+  ('unittest.async_case',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\unittest\\async_case.py',
+   'PYMODULE'),
+  ('unittest.case',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\unittest\\case.py',
+   'PYMODULE'),
+  ('unittest.loader',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\unittest\\loader.py',
+   'PYMODULE'),
+  ('unittest.main',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\unittest\\main.py',
+   'PYMODULE'),
+  ('unittest.result',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\unittest\\result.py',
+   'PYMODULE'),
+  ('unittest.runner',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\unittest\\runner.py',
+   'PYMODULE'),
+  ('unittest.signals',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\unittest\\signals.py',
+   'PYMODULE'),
+  ('unittest.suite',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\unittest\\suite.py',
+   'PYMODULE'),
+  ('unittest.util',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\unittest\\util.py',
    'PYMODULE'),
   ('urllib',
    'C:\\Users\\Miguel '
@@ -1321,6 +3418,58 @@
   ('xml',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\__init__.py',
+   'PYMODULE'),
+  ('xml.dom',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\dom\\__init__.py',
+   'PYMODULE'),
+  ('xml.dom.NodeFilter',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\dom\\NodeFilter.py',
+   'PYMODULE'),
+  ('xml.dom.domreg',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\dom\\domreg.py',
+   'PYMODULE'),
+  ('xml.dom.expatbuilder',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\dom\\expatbuilder.py',
+   'PYMODULE'),
+  ('xml.dom.minicompat',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\dom\\minicompat.py',
+   'PYMODULE'),
+  ('xml.dom.minidom',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\dom\\minidom.py',
+   'PYMODULE'),
+  ('xml.dom.pulldom',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\dom\\pulldom.py',
+   'PYMODULE'),
+  ('xml.dom.xmlbuilder',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\dom\\xmlbuilder.py',
+   'PYMODULE'),
+  ('xml.etree',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\etree\\__init__.py',
+   'PYMODULE'),
+  ('xml.etree.ElementInclude',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\etree\\ElementInclude.py',
+   'PYMODULE'),
+  ('xml.etree.ElementPath',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\etree\\ElementPath.py',
+   'PYMODULE'),
+  ('xml.etree.ElementTree',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\etree\\ElementTree.py',
+   'PYMODULE'),
+  ('xml.etree.cElementTree',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\xml\\etree\\cElementTree.py',
    'PYMODULE'),
   ('xml.parsers',
    'C:\\Users\\Miguel '

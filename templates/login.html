@@ -6,25 +6,31 @@
   <title>Iniciar Sesión — ERP Almacén</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
   <style>
     body {
-      display: grid;
-      place-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       min-height: 100vh;
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
       margin: 0;
-      padding: 1rem;
+      padding: 1.5rem;
+      font-family: var(--ga-font);
+      box-sizing: border-box;
     }
     .login-card {
-      width: 100%;
-      max-width: 400px;
+      width: 100% !important;
+      max-width: 420px !important;
+      margin: 0 auto !important;
       background: #ffffff;
-      padding: 2.25rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-sizing: border-box;
     }
     .login-brand {
       text-align: center;
@@ -34,40 +40,83 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 3rem;
-      height: 3rem;
-      background: var(--ga-accent, #0f766e);
+      width: 3.5rem;
+      height: 3.5rem;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
       color: #ffffff;
       font-weight: 800;
-      font-size: 1.25rem;
-      border-radius: 10px;
-      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      margin-bottom: 0.85rem;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
     }
     .login-brand h1 {
-      font-size: 1.35rem;
+      font-size: 1.45rem;
       font-weight: 700;
       margin: 0;
       color: #0f172a;
+      letter-spacing: -0.02em;
     }
     .login-brand p {
       font-size: 0.85rem;
       color: #64748b;
-      margin: 0.25rem 0 0 0;
+      margin: 0.35rem 0 0 0;
     }
     .error-alert {
-      background: #fee2e2;
+      background: #fef2f2;
       border: 1px solid #fecaca;
-      color: #b91c1c;
-      padding: 0.75rem;
-      border-radius: 6px;
+      color: #dc2626;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
       font-size: 0.85rem;
+      font-weight: 600;
       margin-bottom: 1.25rem;
       text-align: center;
+    }
+    .login-form label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #334155;
+      margin-bottom: 0.85rem;
+    }
+    .login-form input {
+      margin-top: 0.35rem;
+      font-size: 0.95rem;
+    }
+    .login-btn {
+      width: 100%;
+      margin-top: 1.25rem;
+      padding: 0.85rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      background: #2563eb;
+      border-color: #2563eb;
+      border-radius: 8px;
+    }
+    .login-btn:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+    }
+    .demo-hint {
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #64748b;
+      background: #f8fafc;
+      padding: 0.65rem;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+    .demo-hint code {
+      font-family: var(--ga-mono);
+      font-weight: 700;
+      color: #0f172a;
     }
   </style>
 </head>
 <body>
-  <main class="login-card">
+  <div class="login-card">
     <div class="login-brand">
       <div class="mark">ERP</div>
       <h1>Gestión Almacén</h1>
@@ -80,25 +129,25 @@
     </div>
     {% endif %}
 
-    <form action="/login" method="POST">
-      <label style="font-weight: 600; font-size: 0.85rem;">
+    <form action="/login" method="POST" class="login-form">
+      <label>
         Usuario
         <input type="text" name="usuario" required placeholder="admin / usuario" autofocus autocomplete="username" />
       </label>
 
-      <label style="font-weight: 600; font-size: 0.85rem; margin-top: 0.5rem;">
+      <label>
         Contraseña
         <input type="password" name="password" required placeholder="••••••••" autocomplete="current-password" />
       </label>
 
-      <button type="submit" style="width: 100%; margin-top: 1.25rem; padding: 0.75rem; font-weight: 700; font-size: 1rem;">
+      <button type="submit" class="login-btn">
         Iniciar Sesión →
       </button>
     </form>
 
-    <div style="margin-top: 1.5rem; text-align: center; font-size: 0.75rem; color: #94a3b8;">
+    <div class="demo-hint">
       Acceso por defecto: <code>admin</code> / <code>admin123</code>
     </div>
-  </main>
+  </div>
 </body>
 </html>

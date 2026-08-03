@@ -1,6 +1,30 @@
 ([('GestionAlmacen.exe',
    'C:\\proyectos\\gestion-almacen\\build\\GestionAlmacen\\GestionAlmacen.exe',
    'EXECUTABLE'),
+  ('PIL\\MSVCP140.dll',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\MSVCP140.dll',
+   'BINARY'),
+  ('PIL\\VCRUNTIME140.dll',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('PIL\\VCRUNTIME140_1.dll',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\VCRUNTIME140_1.dll',
+   'BINARY'),
+  ('PIL\\_imaging.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\_imaging.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('PIL\\_imagingtk.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\_imagingtk.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('PIL\\_webp.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\PIL\\_webp.cp310-win_amd64.pyd',
+   'EXTENSION'),
   ('VCRUNTIME140.dll',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\VCRUNTIME140.dll',
@@ -20,6 +44,10 @@
   ('_decimal.pyd',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\DLLs\\_decimal.pyd',
+   'EXTENSION'),
+  ('_elementtree.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\DLLs\\_elementtree.pyd',
    'EXTENSION'),
   ('_hashlib.pyd',
    'C:\\Users\\Miguel '
@@ -162,6 +190,9 @@
   ('api-ms-win-crt-math-l1-1-0.dll',
    'C:\\Program Files\\Java\\jdk-17\\bin\\api-ms-win-crt-math-l1-1-0.dll',
    'BINARY'),
+  ('api-ms-win-crt-private-l1-1-0.dll',
+   'C:\\Program Files\\Java\\jdk-17\\bin\\api-ms-win-crt-private-l1-1-0.dll',
+   'BINARY'),
   ('api-ms-win-crt-process-l1-1-0.dll',
    'C:\\Program Files\\Java\\jdk-17\\bin\\api-ms-win-crt-process-l1-1-0.dll',
    'BINARY'),
@@ -263,6 +294,70 @@
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\DLLs\\libssl-1_1.dll',
    'BINARY'),
+  ('lxml\\_elementpath.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\_elementpath.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\builder.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\builder.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\etree.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\etree.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\html\\_difflib.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\_difflib.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\html\\diff.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\html\\diff.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\isoschematron\\resources\\rng\\iso-schematron.rng',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\isoschematron\\resources\\rng\\iso-schematron.rng',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\RNG2Schtrn.xsl',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\RNG2Schtrn.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\XSD2Schtrn.xsl',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\XSD2Schtrn.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_abstract_expand.xsl',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_abstract_expand.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_dsdl_include.xsl',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_dsdl_include.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_message.xsl',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_message.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_skeleton_for_xslt1.xsl',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_schematron_skeleton_for_xslt1.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_svrl_for_xslt1.xsl',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\iso_svrl_for_xslt1.xsl',
+   'DATA'),
+  ('lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\readme.txt',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\isoschematron\\resources\\xsl\\iso-schematron-xslt1\\readme.txt',
+   'DATA'),
+  ('lxml\\objectify.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\objectify.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('lxml\\sax.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\lxml\\sax.cp310-win_amd64.pyd',
+   'EXTENSION'),
   ('markupsafe-3.0.3.dist-info\\INSTALLER',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\markupsafe-3.0.3.dist-info\\INSTALLER',
@@ -291,6 +386,66 @@
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\markupsafe\\_speedups.cp310-win_amd64.pyd',
    'EXTENSION'),
+  ('numpy.libs\\libopenblas64__v0.3.23-293-gc2f4bdbb-gcc_10_3_0-2bde3a66a51006b2b53eb373ff767a3f.dll',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy.libs\\libopenblas64__v0.3.23-293-gc2f4bdbb-gcc_10_3_0-2bde3a66a51006b2b53eb373ff767a3f.dll',
+   'BINARY'),
+  ('numpy\\core\\_multiarray_tests.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_multiarray_tests.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\core\\_multiarray_umath.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\core\\_multiarray_umath.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\fft\\_pocketfft_internal.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\fft\\_pocketfft_internal.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\linalg\\_umath_linalg.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\linalg\\_umath_linalg.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_bounded_integers.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\random\\_bounded_integers.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_common.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\random\\_common.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_generator.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\random\\_generator.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_mt19937.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\random\\_mt19937.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_pcg64.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\random\\_pcg64.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_philox.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\random\\_philox.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_sfc64.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\random\\_sfc64.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\bit_generator.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\random\\bit_generator.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\mtrand.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\numpy\\random\\mtrand.cp310-win_amd64.pyd',
+   'EXTENSION'),
+  ('psutil\\_psutil_windows.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\psutil\\_psutil_windows.cp310-win_amd64.pyd',
+   'EXTENSION'),
   ('pyexpat.pyd',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\DLLs\\pyexpat.pyd',
@@ -298,6 +453,10 @@
   ('python310.dll',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\python310.dll',
+   'BINARY'),
+  ('pywin32_system32\\pywintypes310.dll',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\pywin32_system32\\pywintypes310.dll',
    'BINARY'),
   ('select.pyd',
    'C:\\Users\\Miguel '
@@ -378,4 +537,8 @@
   ('werkzeug-3.1.8.dist-info\\licenses\\LICENSE.txt',
    'C:\\Users\\Miguel '
    'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\werkzeug-3.1.8.dist-info\\licenses\\LICENSE.txt',
-   'DATA')],)
+   'DATA'),
+  ('win32\\win32pdh.cp310-win_amd64.pyd',
+   'C:\\Users\\Miguel '
+   'Muñoz\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\win32\\win32pdh.cp310-win_amd64.pyd',
+   'EXTENSION')],)
