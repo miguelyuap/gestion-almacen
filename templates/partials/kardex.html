@@ -1,0 +1,100 @@
+<section id="vista-kardex">
+  <header class="page-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; position: relative; z-index: 50; overflow: visible;">
+    <div>
+      <h2>Kárdex de Movimientos de Inventario</h2>
+      <p>Historial detallado de todas las entradas, salidas y ajustes con sus respectivos costos y bodegas.</p>
+    </div>
+    <div style="display: flex; gap: 0.5rem; align-items: center;">
+      <select name="producto_id"
+              class="searchable"
+              hx-get="/vistas/kardex"
+              hx-target="#contenido"
+              hx-swap="innerHTML"
+              hx-include="[name='almacen_id']">
+        <option value="">-- Todos los Productos --</option>
+        {% for p in productos %}
+          <option value="{{ p.id }}" {% if producto_filtro == p.id %}selected{% endif %}>{{ p.codigo }} - {{ p.nombre }}</option>
+        {% endfor %}
+      </select>
+
+      <select name="almacen_id"
+              class="searchable"
+              hx-get="/vistas/kardex"
+              hx-target="#contenido"
+              hx-swap="innerHTML"
+              hx-include="[name='producto_id']">
+        <option value="">-- Todas las Bodegas --</option>
+        {% for a in almacenes %}
+          <option value="{{ a.id }}" {% if almacen_filtro == a.id %}selected{% endif %}>{{ a.nombre }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </header>
+
+  <div class="panel">
+    <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center;">
+      <h3>Registro de Movimientos (Últimos 100)</h3>
+      {% if producto_filtro or almacen_filtro %}
+        <a href="#" hx-get="/vistas/kardex" hx-target="#contenido" hx-swap="innerHTML">✕ Limpiar Filtros</a>
+      {% endif %}
+    </div>
+    <div class="panel-body tight">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha y Hora</th>
+              <th>Tipo Movimiento</th>
+              <th>Producto (SKU)</th>
+              <th>Bodega</th>
+              <th>Cantidad</th>
+              <th>Costo Unitario</th>
+              <th>Referencia / Doc.</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if kardex_list %}
+              {% for k in kardex_list %}
+              <tr>
+                <td><small>#{{ k.id }}</small></td>
+                <td><code style="font-size: 0.8rem;">{{ k.fecha }}</code></td>
+                <td>
+                  {% if k.tipo_movimiento == 'ENTRADA' %}
+                    <span class="badge badge-success">ENTRADA (+)</span>
+                  {% elif k.tipo_movimiento == 'SALIDA' %}
+                    <span class="badge badge-danger">SALIDA (-)</span>
+                  {% else %}
+                    <span class="badge badge-info">AJUSTE</span>
+                  {% endif %}
+                </td>
+                <td>
+                  <strong>{{ k.producto_nombre }}</strong>
+                  <br/><small><code>{{ k.producto_codigo }}</code></small>
+                </td>
+                <td>{{ k.almacen_nombre }}</td>
+                <td>
+                  <strong style="font-size: 1.05rem;">
+                    {% if k.tipo_movimiento == 'ENTRADA' %}+{% elif k.tipo_movimiento == 'SALIDA' %}-{% endif %}{{ k.cantidad }}
+                  </strong>
+                </td>
+                <td>${{ "%.2f"|format(k.costo_unitario) }}</td>
+                <td>{{ k.referencia }}</td>
+              </tr>
+              {% endfor %}
+            {% else %}
+              <tr>
+                <td colspan="8">
+                  <div class="empty-state">
+                    <strong>No se encontraron registros en el Kárdex</strong>
+                    <p>Las entradas por compras, salidas por facturación POS y ajustes manuales aparecerán aquí automáticamente.</p>
+                  </div>
+                </td>
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

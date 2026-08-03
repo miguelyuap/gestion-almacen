@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comprobante POS — {{ venta.numero_factura }}</title>
+  <style>
+    @page {
+      size: 80mm auto;
+      margin: 0;
+    }
+    body {
+      font-family: 'Courier New', Courier, monospace, system-ui;
+      font-size: 12px;
+      line-height: 1.3;
+      color: #000;
+      background: #fff;
+      margin: 0;
+      padding: 10px;
+      width: 80mm;
+      box-sizing: border-box;
+    }
+    .ticket-header {
+      text-align: center;
+      border-bottom: 1px dashed #000;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+    .ticket-header h1 {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 0 2px;
+    }
+    .ticket-header p {
+      margin: 0;
+      font-size: 11px;
+    }
+    .meta-table {
+      width: 100%;
+      font-size: 11px;
+      margin-bottom: 8px;
+      border-bottom: 1px dashed #000;
+      padding-bottom: 6px;
+    }
+    .meta-table td {
+      padding: 1px 0;
+    }
+    .items-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
+    .items-table th {
+      border-bottom: 1px solid #000;
+      text-align: left;
+      padding: 4px 0;
+    }
+    .items-table td {
+      padding: 3px 0;
+      vertical-align: top;
+    }
+    .text-right {
+      text-align: right;
+    }
+    .totals-block {
+      border-top: 1px dashed #000;
+      padding-top: 6px;
+      font-size: 11px;
+      margin-bottom: 10px;
+    }
+    .totals-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2px;
+    }
+    .totals-row.grand-total {
+      font-size: 14px;
+      font-weight: bold;
+      border-top: 1px solid #000;
+      padding-top: 4px;
+      margin-top: 4px;
+    }
+    .fe-box {
+      border: 1px solid #000;
+      padding: 6px;
+      text-align: center;
+      font-size: 9px;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+    .fe-title {
+      font-weight: bold;
+      font-size: 10px;
+      margin-bottom: 2px;
+    }
+    .qr-placeholder {
+      width: 65px;
+      height: 65px;
+      border: 1px solid #000;
+      margin: 6px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 10px;
+      background: repeating-linear-gradient(
+        45deg,
+        #eee,
+        #eee 5px,
+        #fff 5px,
+        #fff 10px
+      );
+    }
+    .no-print-bar {
+      background: #f1f5f9;
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    .btn-print {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    @media print {
+      .no-print-bar {
+        display: none;
+      }
+      body {
+        padding: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print-bar">
+    <button type="button" class="btn-print" onclick="window.print()">🖨️ IMPRIMIR TIQUETE POS</button>
+  </div>
+
+  <div class="ticket-header">
+    <h1>ERP ALMACÉN S.A.S.</h1>
+    <p>NIT: 900.123.456-7 | Regimen Común</p>
+    <p>Calle Principal # 45 - 12 | Tel: (601) 555-0199</p>
+    <p>COMPROBANTE DE VENTA POS</p>
+  </div>
+
+  <table class="meta-table">
+    <tr>
+      <td><strong>Nº Factura:</strong> {{ venta.numero_factura }}</td>
+      <td class="text-right"><strong>Estado:</strong> {{ venta.estado|upper }}</td>
+    </tr>
+    <tr>
+      <td><strong>Fecha:</strong> {{ venta.fecha }}</td>
+      <td class="text-right"><strong>Bodega:</strong> {{ venta.almacen_nombre }}</td>
+    </tr>
+    <tr>
+      <td><strong>Cajero:</strong> {{ venta.cajero_nombre or 'Cajero General' }}</td>
+      <td class="text-right"><strong>Pago:</strong> {{ venta.metodo_pago }}</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Cliente:</strong> {{ venta.cliente_nombre }}</td>
+    </tr>
+    <tr>
+      <td><strong>NIT/CC:</strong> {{ venta.cliente_nit }}</td>
+      <td class="text-right">{% if venta.cliente_email %}{{ venta.cliente_email }}{% endif %}</td>
+    </tr>
+  </table>
+
+  <table class="items-table">
+    <thead>
+      <tr>
+        <th>Cant x Producto</th>
+        <th class="text-right">Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for d in venta.detalles %}
+      <tr>
+        <td>
+          {{ d.cantidad }} x {{ d.producto_nombre }}
+          <br/><small style="font-size: 9px; color: #555;">({{ d.producto_codigo }}) @ ${{ "%.2f"|format(d.precio_unitario) }}</small>
+        </td>
+        <td class="text-right">${{ "%.2f"|format(d.subtotal) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="totals-block">
+    <div class="totals-row">
+      <span>Subtotal (Sin IVA):</span>
+      <span>${{ "%.2f"|format(venta.subtotal if venta.subtotal else (venta.total / 1.19)) }}</span>
+    </div>
+    <div class="totals-row">
+      <span>IVA (19%):</span>
+      <span>${{ "%.2f"|format(venta.iva_total if venta.iva_total else (venta.total - (venta.total / 1.19))) }}</span>
+    </div>
+    <div class="totals-row grand-total">
+      <span>TOTAL PAGADO:</span>
+      <span>${{ "%.2f"|format(venta.total) }}</span>
+    </div>
+  </div>
+
+  <div class="fe-box">
+    <div class="fe-title">ESTRUCTURA DE FACTURACIÓN ELECTRÓNICA</div>
+    <div>Documento Equivalente POS / Sistema Local</div>
+    <div class="qr-placeholder">QR DIAN</div>
+    <div style="word-break: break-all; font-size: 8px;">
+      <strong>CUFE:</strong> {{ venta.cufe or '000000000000000000000000000000000000000000000' }}
+    </div>
+    <div style="margin-top: 4px; font-size: 8px;">Estado Transmisión: {{ venta.estado_electronico|upper }}</div>
+  </div>
+
+  <div style="text-align: center; margin-top: 12px; font-size: 10px; border-top: 1px dashed #000; padding-top: 6px;">
+    ¡Gracias por su compra!
+    <br/>Conserve este comprobante para cualquier garantía.
+  </div>
+
+  <script>
+    // Auto abrir ventana de impresión al cargar si no está dentro de iframe
+    if (window.self === window.top) {
+      setTimeout(() => window.print(), 300);
+    }
+  </script>
+</body>
+</html>

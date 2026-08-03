@@ -1,0 +1,89 @@
+<section id="vista-usuarios">
+  <header class="page-header">
+    <h2>Gestión de Usuarios y Roles (RBAC)</h2>
+    <p>Administra las cuentas con acceso al ERP y asigna roles de Administrador o Empleado.</p>
+  </header>
+
+  <details class="panel" style="margin-bottom: 1.5rem;" open>
+    <summary class="panel-header" style="font-weight: 600; cursor: pointer;">
+      + Registrar Nuevo Usuario
+    </summary>
+    <div class="panel-body">
+      <form hx-post="/usuarios"
+            hx-target="#contenido"
+            hx-swap="innerHTML"
+            hx-indicator="#nav-loading">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <label>
+            Nombre Completo
+            <input type="text" name="nombre" required placeholder="Carlos Pérez" />
+          </label>
+          <label>
+            Nombre de Usuario
+            <input type="text" name="usuario" required placeholder="carlos.perez" />
+          </label>
+          <label>
+            Contraseña
+            <input type="password" name="password" required placeholder="••••••••" minlength="4" />
+          </label>
+          <label>
+            Rol de Acceso
+            <select name="rol" required>
+              <option value="empleado">Empleado / Cajero</option>
+              <option value="admin">Administrador</option>
+            </select>
+          </label>
+        </div>
+        <div style="margin-top: 1rem; text-align: right;">
+          <button type="submit">Crear Cuenta de Usuario</button>
+        </div>
+      </form>
+    </div>
+  </details>
+
+  <div class="panel">
+    <div class="panel-header">
+      <h3>Usuarios Registrados en el Sistema</h3>
+    </div>
+    <div class="panel-body tight">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre Completo</th>
+              <th>Usuario</th>
+              <th>Rol</th>
+              <th>Fecha Registro</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if usuarios %}
+              {% for u in usuarios %}
+              <tr>
+                <td><code>#{{ u.id }}</code></td>
+                <td><strong>{{ u.nombre }}</strong></td>
+                <td><code>{{ u.usuario }}</code></td>
+                <td>
+                  {% if u.rol == 'admin' %}
+                    <span class="badge badge-success">Administrador</span>
+                  {% else %}
+                    <span class="badge badge-info">Empleado</span>
+                  {% endif %}
+                </td>
+                <td><small>{{ u.fecha_creacion }}</small></td>
+              </tr>
+              {% endfor %}
+            {% else %}
+              <tr>
+                <td colspan="5" style="text-align: center; color: var(--ga-muted);">
+                  Sin usuarios registrados
+                </td>
+              </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

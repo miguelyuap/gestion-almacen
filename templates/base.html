@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gestión de Almacén</title>
+  <title>ERP Local — Gestión de Almacén</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
   <script src="https://unpkg.com/htmx.org@2.0.4"></script>
@@ -15,10 +15,10 @@
   <div class="app-shell">
     <aside class="sidebar" aria-label="Navegación principal">
       <div class="brand">
-        <div class="brand-mark" aria-hidden="true">GA</div>
+        <div class="brand-mark" aria-hidden="true">ERP</div>
         <div class="brand-text">
-          <strong>Gestión Almacén</strong>
-          <span>Operaciones · Inventario</span>
+          <strong>ERP Almacén</strong>
+          <span>Bodegas · Kárdex · POS</span>
         </div>
       </div>
 
@@ -31,18 +31,7 @@
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <path d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1v-10.5z"/>
           </svg>
-          Inicio
-        </a>
-        <a href="#" class="nav-link"
-           hx-get="/vistas/compras"
-           hx-target="#contenido"
-           hx-swap="innerHTML"
-           hx-indicator="#nav-loading">
-          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M6 6h15l-1.5 9h-12L6 6zm0 0L5 3H2"/>
-            <circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/>
-          </svg>
-          Compras
+          Inicio / KPIs
         </a>
         <a href="#" class="nav-link"
            hx-get="/vistas/inventario"
@@ -53,18 +42,44 @@
             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
             <path d="M3.3 7 12 12l8.7-5M12 22V12"/>
           </svg>
-          Inventario
+          Productos & Bodegas
         </a>
         <a href="#" class="nav-link"
-           hx-get="/vistas/activos"
+           hx-get="/vistas/kardex"
            hx-target="#contenido"
            hx-swap="innerHTML"
            hx-indicator="#nav-loading">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="14" rx="2"/>
-            <path d="M8 21h8M12 18v3"/>
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
           </svg>
-          Activos fijos
+          Kárdex Movimientos
+        </a>
+        <a href="#" class="nav-link"
+           hx-get="/vistas/compras"
+           hx-target="#contenido"
+           hx-swap="innerHTML"
+           hx-indicator="#nav-loading">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M6 6h15l-1.5 9h-12L6 6zm0 0L5 3H2"/>
+            <circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/>
+          </svg>
+          Compras & Órdenes
+        </a>
+        <a href="#" class="nav-link"
+           hx-get="/vistas/facturacion"
+           hx-target="#contenido"
+           hx-swap="innerHTML"
+           hx-indicator="#nav-loading">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <line x1="2" y1="10" x2="22" y2="10"/>
+            <path d="M7 15h2M13 15h4"/>
+          </svg>
+          Facturación POS / Venta
         </a>
         <a href="#" class="nav-link"
            hx-get="/vistas/almacenes"
@@ -75,21 +90,87 @@
             <path d="M3 21V8l9-5 9 5v13"/>
             <path d="M9 21v-8h6v8"/>
           </svg>
-          Almacenes
+          Bodegas & Sedes
         </a>
+        <a href="#" class="nav-link"
+           hx-get="/vistas/activos"
+           hx-target="#contenido"
+           hx-swap="innerHTML"
+           hx-indicator="#nav-loading">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="14" rx="2"/>
+            <path d="M8 21h8M12 18v3"/>
+          </svg>
+          Activos Fijos
+        </a>
+
+        {% if current_user and current_user.rol == 'admin' %}
+        <a href="#" class="nav-link"
+           hx-get="/vistas/usuarios"
+           hx-target="#contenido"
+           hx-swap="innerHTML"
+           hx-indicator="#nav-loading">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          Usuarios & Roles
+        </a>
+        <a href="#" class="nav-link"
+           hx-get="/vistas/licencia"
+           hx-target="#contenido"
+           hx-swap="innerHTML"
+           hx-indicator="#nav-loading">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          Suscripción & Licencia
+        </a>
+        {% endif %}
       </nav>
 
-      <div class="sidebar-foot">
-        Compras · Inventario · Activos · Bodegas
+      <div class="sidebar-foot" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.75rem;">
+        {% if current_user %}
+        <div style="font-weight: 600; color: #f8fafc; font-size: 0.85rem;">{{ current_user.nombre }}</div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.25rem;">
+          <span class="badge {% if current_user.rol == 'admin' %}badge-success{% else %}badge-info{% endif %}" style="font-size: 0.7rem; padding: 0.15rem 0.4rem;">
+            {{ current_user.rol|upper }}
+          </span>
+          <a href="/logout" style="color: #f87171; text-decoration: none; font-size: 0.75rem; font-weight: 600;">Cerrar sesión ➔</a>
+        </div>
+        {% else %}
+        <a href="/login" style="color: #38bdf8; text-decoration: none;">Iniciar sesión</a>
+        {% endif %}
       </div>
     </aside>
 
     <div class="main-area">
       <header class="topbar">
-        <div class="topbar-title" id="vista-titulo">Panel</div>
-        <div id="nav-loading" class="htmx-indicator">
-          <span class="spinner" aria-hidden="true"></span>
-          Cargando…
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <button type="button" id="btn-toggle-menu" class="btn-menu-toggle" aria-label="Abrir navegación">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+            <span>Menú</span>
+          </button>
+          <div class="topbar-title" id="vista-titulo">Panel ERP</div>
+        </div>
+        
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div id="nav-loading" class="htmx-indicator">
+            <span class="spinner" aria-hidden="true"></span>
+            Cargando…
+          </div>
+          {% if current_user %}
+          <div class="user-badge-top" style="font-size: 0.8rem; color: var(--ga-muted);">
+            Usuario: <strong style="color: var(--ga-ink);">{{ current_user.usuario }}</strong> ({{ current_user.rol }})
+          </div>
+          {% endif %}
         </div>
       </header>
 
@@ -105,11 +186,14 @@
 
   <script>
     var TITULOS = {
-      "/vistas/inicio": "Panel",
-      "/vistas/compras": "Compras",
-      "/vistas/inventario": "Inventario",
-      "/vistas/activos": "Activos fijos",
-      "/vistas/almacenes": "Almacenes"
+      "/vistas/inicio": "Panel Principal / KPIs",
+      "/vistas/inventario": "Inventario por Bodegas",
+      "/vistas/kardex": "Kárdex & Movimientos",
+      "/vistas/compras": "Gestión de Compras & Proveedores",
+      "/vistas/facturacion": "Facturación Rápida / Mostrador POS",
+      "/vistas/almacenes": "Gestión de Bodegas",
+      "/vistas/activos": "Activos Fijos",
+      "/vistas/usuarios": "Gestión de Usuarios & Roles"
     };
 
     document.body.addEventListener("htmx:afterOnLoad", function (evt) {
@@ -123,7 +207,6 @@
         var titulo = document.getElementById("vista-titulo");
         if (titulo && TITULOS[path]) titulo.textContent = TITULOS[path];
       } else {
-        /* Tras POST, la respuesta es una vista; marcar nav según el swap */
         var target = evt.detail.target;
         if (target && target.id === "contenido") {
           var vista = target.querySelector("[id^='vista-']");
@@ -131,8 +214,11 @@
           var map = {
             "vista-compras": "/vistas/compras",
             "vista-inventario": "/vistas/inventario",
+            "vista-kardex": "/vistas/kardex",
+            "vista-facturacion": "/vistas/facturacion",
             "vista-activos": "/vistas/activos",
             "vista-almacenes": "/vistas/almacenes",
+            "vista-usuarios": "/vistas/usuarios",
             "vista-inicio": "/vistas/inicio"
           };
           var vistaPath = map[vista.id];
@@ -145,6 +231,176 @@
         }
       }
     });
+
+    /* —— Componente Searchable Combobox (Vanilla JS) —— */
+    function makeSelectSearchable(selectElem) {
+      if (!selectElem || selectElem.dataset.comboboxInitialized) return;
+      selectElem.dataset.comboboxInitialized = "true";
+
+      selectElem.style.display = "none";
+
+      var wrap = document.createElement("div");
+      wrap.className = "combobox-wrap";
+
+      var input = document.createElement("input");
+      input.type = "text";
+      input.className = "combobox-input";
+      input.autocomplete = "off";
+
+      var selectedOpt = selectElem.options[selectElem.selectedIndex];
+      if (selectedOpt && selectedOpt.value) {
+        input.value = selectedOpt.text;
+      } else {
+        input.placeholder = (selectElem.options[0] ? selectElem.options[0].text : "-- Seleccionar --");
+      }
+
+      var dropdown = document.createElement("div");
+      dropdown.className = "combobox-dropdown";
+
+      function populateItems(filterText) {
+        dropdown.innerHTML = "";
+        var query = (filterText || "").toLowerCase().trim();
+        var count = 0;
+
+        Array.from(selectElem.options).forEach(function (opt, idx) {
+          if (!opt.value && idx === 0) return;
+          var text = opt.text;
+          if (!query || text.toLowerCase().indexOf(query) !== -1) {
+            var item = document.createElement("div");
+            item.className = "combobox-item";
+            if (opt.selected) item.classList.add("selected");
+            item.textContent = text;
+            item.dataset.value = opt.value;
+
+            item.addEventListener("mousedown", function (e) {
+              e.preventDefault();
+              selectOption(opt.value, text);
+            });
+
+            dropdown.appendChild(item);
+            count++;
+          }
+        });
+
+        if (count === 0) {
+          var noRes = document.createElement("div");
+          noRes.className = "combobox-no-results";
+          noRes.textContent = "No se encontraron coincidencias";
+          dropdown.appendChild(noRes);
+        }
+      }
+
+      function selectOption(val, text) {
+        selectElem.value = val;
+        input.value = text;
+        dropdown.classList.remove("open");
+        wrap.classList.remove("open");
+
+        selectElem.dispatchEvent(new Event("change", { bubbles: true }));
+        selectElem.dispatchEvent(new Event("input", { bubbles: true }));
+      }
+
+      input.addEventListener("focus", function () {
+        populateItems(input.value);
+        dropdown.classList.add("open");
+        wrap.classList.add("open");
+      });
+
+      input.addEventListener("input", function () {
+        populateItems(input.value);
+        dropdown.classList.add("open");
+        wrap.classList.add("open");
+      });
+
+      input.addEventListener("blur", function () {
+        setTimeout(function () {
+          dropdown.classList.remove("open");
+          wrap.classList.remove("open");
+          var currentOpt = selectElem.options[selectElem.selectedIndex];
+          if (currentOpt && currentOpt.value) {
+            input.value = currentOpt.text;
+          }
+        }, 150);
+      });
+
+      input.addEventListener("keydown", function (e) {
+        var items = dropdown.querySelectorAll(".combobox-item");
+        if (!items.length) return;
+
+        var activeItem = dropdown.querySelector(".combobox-item.active");
+        var activeIdx = Array.from(items).indexOf(activeItem);
+
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          if (!dropdown.classList.contains("open")) dropdown.classList.add("open");
+          activeIdx = (activeIdx + 1) % items.length;
+          items.forEach(function (i) { i.classList.remove("active"); });
+          items[activeIdx].classList.add("active");
+          items[activeIdx].scrollIntoView({ block: "nearest" });
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          if (!dropdown.classList.contains("open")) dropdown.classList.add("open");
+          activeIdx = (activeIdx - 1 + items.length) % items.length;
+          items.forEach(function (i) { i.classList.remove("active"); });
+          items[activeIdx].classList.add("active");
+          items[activeIdx].scrollIntoView({ block: "nearest" });
+        } else if (e.key === "Enter") {
+          if (dropdown.classList.contains("open") && activeItem) {
+            e.preventDefault();
+            selectOption(activeItem.dataset.value, activeItem.textContent);
+          }
+        } else if (e.key === "Escape") {
+          dropdown.classList.remove("open");
+        }
+      });
+
+      selectElem.parentNode.insertBefore(wrap, selectElem);
+      wrap.appendChild(selectElem);
+      wrap.appendChild(input);
+      wrap.appendChild(dropdown);
+    }
+
+    function initAllSearchableSelects(root) {
+      var targetNode = root || document;
+      targetNode.querySelectorAll("select.searchable, select[data-searchable='true']").forEach(makeSelectSearchable);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      initAllSearchableSelects();
+
+      // Control del menú hamburguesa móvil
+      var toggleBtn = document.getElementById("btn-toggle-menu");
+      var sidebar = document.querySelector(".sidebar");
+      var overlay = document.createElement("div");
+      overlay.className = "sidebar-overlay";
+      document.body.appendChild(overlay);
+
+      function toggleMenu() {
+        sidebar.classList.toggle("open");
+        overlay.classList.toggle("open");
+      }
+
+      function closeMenu() {
+        sidebar.classList.remove("open");
+        overlay.classList.remove("open");
+      }
+
+      if (toggleBtn) {
+        toggleBtn.addEventListener("click", toggleMenu);
+      }
+      overlay.addEventListener("click", closeMenu);
+
+      document.querySelectorAll(".nav-link").forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+      });
+    });
+
+    document.body.addEventListener("htmx:afterOnLoad", function (evt) {
+      if (evt.detail && evt.detail.target) {
+        initAllSearchableSelects(evt.detail.target);
+      }
+    });
   </script>
 </body>
 </html>
+

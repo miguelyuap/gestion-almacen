@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iniciar Sesión — ERP Almacén</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+  <style>
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      margin: 0;
+      padding: 1rem;
+    }
+    .login-card {
+      width: 100%;
+      max-width: 400px;
+      background: #ffffff;
+      padding: 2.25rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+    .login-brand {
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    .login-brand .mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      background: var(--ga-accent, #0f766e);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.25rem;
+      border-radius: 10px;
+      margin-bottom: 0.75rem;
+    }
+    .login-brand h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0;
+      color: #0f172a;
+    }
+    .login-brand p {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin: 0.25rem 0 0 0;
+    }
+    .error-alert {
+      background: #fee2e2;
+      border: 1px solid #fecaca;
+      color: #b91c1c;
+      padding: 0.75rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="login-card">
+    <div class="login-brand">
+      <div class="mark">ERP</div>
+      <h1>Gestión Almacén</h1>
+      <p>Ingresa tus credenciales para continuar</p>
+    </div>
+
+    {% if error %}
+    <div class="error-alert">
+      ⚠️ {{ error }}
+    </div>
+    {% endif %}
+
+    <form action="/login" method="POST">
+      <label style="font-weight: 600; font-size: 0.85rem;">
+        Usuario
+        <input type="text" name="usuario" required placeholder="admin / usuario" autofocus autocomplete="username" />
+      </label>
+
+      <label style="font-weight: 600; font-size: 0.85rem; margin-top: 0.5rem;">
+        Contraseña
+        <input type="password" name="password" required placeholder="••••••••" autocomplete="current-password" />
+      </label>
+
+      <button type="submit" style="width: 100%; margin-top: 1.25rem; padding: 0.75rem; font-weight: 700; font-size: 1rem;">
+        Iniciar Sesión →
+      </button>
+    </form>
+
+    <div style="margin-top: 1.5rem; text-align: center; font-size: 0.75rem; color: #94a3b8;">
+      Acceso por defecto: <code>admin</code> / <code>admin123</code>
+    </div>
+  </main>
+</body>
+</html>

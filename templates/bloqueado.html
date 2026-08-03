@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acceso Bloqueado — Licencia Vencida</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" />
+  <style>
+    body {
+      background: #0f172a;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      margin: 0;
+      font-family: var(--ga-font);
+      color: #334155;
+    }
+    .lock-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 520px;
+      border-radius: 16px;
+      padding: 2.25rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      border: 1px solid #e2e8f0;
+      text-align: center;
+    }
+    .lock-icon {
+      width: 72px;
+      height: 72px;
+      background: #fef2f2;
+      color: #ef4444;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-size: 2rem;
+    }
+    .bank-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: left;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="lock-card">
+    <div class="lock-icon">🔒</div>
+    <h2 style="font-size: 1.6rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem;">Suscripción Vencida</h2>
+    <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1.5rem; line-height: 1.5;">
+      El periodo de vigencia de su software <strong>ERP Almacén</strong> ha finalizado. Por favor ingrese su clave de activación para renovar su plan por 3, 6 o 12 meses y continuar usando el sistema.
+    </p>
+
+    {% if error %}
+      <div style="background: #fef2f2; color: #991b1b; padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.25rem; border: 1px solid #fecaca;">
+        ⚠️ {{ error }}
+      </div>
+    {% endif %}
+
+    <div class="bank-box">
+      <div style="font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.35rem;">
+        💳 Medios de Pago para Renovación
+      </div>
+      <div style="margin-bottom: 0.35rem;">
+        <strong>Nequi / Daviplata:</strong> <span style="font-family: var(--ga-mono); font-weight: 700; color: #2563eb;">300 123 4567</span>
+      </div>
+      <div style="margin-bottom: 0.35rem;">
+        <strong>Bancolombia Ahorros:</strong> <span style="font-family: var(--ga-mono); font-weight: 700; color: #2563eb;">123-456789-01</span>
+      </div>
+      <div style="font-size: 0.8rem; color: #64748b; margin-top: 0.5rem;">
+        💬 Envíe su comprobante al WhatsApp <strong>+57 300 123 4567</strong> para obtener su clave inmediata.
+      </div>
+    </div>
+
+    <form action="/licencia/activar" method="POST">
+      <div style="margin-bottom: 1rem; text-align: left;">
+        <label style="font-size: 0.825rem; font-weight: 600; color: #334155; display: block; margin-bottom: 0.35rem;">
+          Clave de Activación (3, 6 o 12 Meses)
+        </label>
+        <input type="text" name="llave_activacion" placeholder="Ej: LIC-6M-A1B2-C3D4" required style="font-family: var(--ga-mono); text-transform: uppercase; font-size: 0.95rem; width: 100%; box-sizing: border-box; text-align: center; letter-spacing: 0.05em;" />
+      </div>
+
+      <button type="submit" style="width: 100%; padding: 0.85rem; font-size: 1.05rem; font-weight: 700; background: #2563eb; border-color: #2563eb; border-radius: 8px;">
+        🔓 Activar & Desbloquear Sistema
+      </button>
+    </form>
+
+    <div style="margin-top: 1.5rem; border-top: 1px solid #e2e8f0; padding-top: 1rem; font-size: 0.8rem; color: #94a3b8;">
+      ERP Almacén Desktop App &bull; Sistema de Gestión Local
+    </div>
+  </div>
+</body>
+</html>

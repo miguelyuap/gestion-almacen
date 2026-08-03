@@ -1,0 +1,119 @@
+<section id="vista-licencia">
+  <header class="page-header">
+    <h2>Suscripción & Licencia del Software</h2>
+    <p>Estado de la vigencia del sistema ERP, plan contratado y renovaciones por código de activación.</p>
+  </header>
+
+  {% if exito %}
+    <div class="badge badge-success" style="padding: 1rem; margin-bottom: 1rem; width: 100%; font-size: 0.9rem;">
+      ✓ {{ exito }}
+    </div>
+  {% endif %}
+
+  {% if error %}
+    <div class="badge badge-danger" style="padding: 1rem; margin-bottom: 1rem; width: 100%; font-size: 0.9rem;">
+      ⚠️ {{ error }}
+    </div>
+  {% endif %}
+
+  <div style="display: grid; grid-template-columns: 3fr 2fr; gap: 1.5rem; align-items: start;" class="pos-grid">
+    <!-- Panel de Estado de Licencia -->
+    <div class="panel">
+      <div class="panel-header" style="background: var(--ga-sidebar-bg); color: white;">
+        <h3 style="margin: 0; color: white;">🔐 Estado Actual del Sistema</h3>
+        {% if licencia.estado == 'ACTIVA' %}
+          <span class="badge badge-success">✓ ACTIVA</span>
+        {% else %}
+          <span class="badge badge-danger">✕ VENCIDA</span>
+        {% endif %}
+      </div>
+      <div class="panel-body">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+          <div style="background: var(--ga-canvas); padding: 1rem; border-radius: var(--ga-radius-sm); border: 1px solid var(--ga-border);">
+            <small style="color: var(--ga-muted); font-size: 0.75rem; text-transform: uppercase; font-weight: 600;">Plan Contratado</small>
+            <div style="font-size: 1.4rem; font-weight: 700; color: var(--ga-ink); margin-top: 0.25rem;">
+              {{ licencia.plan_meses }} Meses
+            </div>
+          </div>
+          <div style="background: var(--ga-canvas); padding: 1rem; border-radius: var(--ga-radius-sm); border: 1px solid var(--ga-border);">
+            <small style="color: var(--ga-muted); font-size: 0.75rem; text-transform: uppercase; font-weight: 600;">Días Restantes de Vigencia</small>
+            <div style="font-size: 1.4rem; font-weight: 700; color: {% if licencia.dias_restantes <= 10 %}var(--ga-danger){% elif licencia.dias_restantes <= 20 %}#d97706{% else %}var(--ga-ok){% endif %}; margin-top: 0.25rem;" class="num-col">
+              {{ licencia.dias_restantes }} Días
+            </div>
+          </div>
+        </div>
+
+        <div style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.25rem; background: #ffffff; border: 1px solid var(--ga-border); border-radius: var(--ga-radius-sm); padding: 1rem;">
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--ga-border); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+            <span>Clave Registrada:</span>
+            <code style="font-family: var(--ga-mono); font-weight: 600;">{{ licencia.clave_licencia }}</code>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--ga-border); padding-bottom: 0.5rem; margin-bottom: 0.5rem;">
+            <span>Fecha de Activación:</span>
+            <strong>{{ licencia.fecha_inicio }}</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>Fecha Expiración Plan:</span>
+            <strong style="color: var(--ga-ink);">{{ licencia.fecha_vencimiento }}</strong>
+          </div>
+        </div>
+
+        {% if licencia.alerta_expiracion %}
+          <div class="badge badge-warning" style="padding: 0.85rem; margin-bottom: 1.25rem; font-size: 0.85rem; width: 100%;">
+            ⚠️ <strong>ALERTA DE VENCIMIENTO PRÓXIMO:</strong> Quedan {{ licencia.dias_restantes }} días de vigencia. Por favor renueve su suscripción para continuar sin interrupciones.
+          </div>
+        {% endif %}
+
+        {% if licencia.reloj_alterado %}
+          <div class="badge badge-danger" style="padding: 0.85rem; margin-bottom: 1.25rem; font-size: 0.85rem; width: 100%;">
+            🚨 <strong>ALERTA DE SEGURIDAD:</strong> Se ha detectado una inconsistencia en la fecha del reloj del sistema. Ingrese una clave válida de activación para desbloquear el software.
+          </div>
+        {% endif %}
+
+        <!-- Formulario de Renovación -->
+        <form hx-post="/licencia/activar" hx-target="#contenido" hx-swap="innerHTML" style="border-top: 1px dashed var(--ga-border); padding-top: 1.25rem;">
+          <h4 style="font-size: 1rem; margin-bottom: 0.5rem; color: var(--ga-ink);">🔑 Ingresar Clave de Activación o Renovación</h4>
+          <p style="font-size: 0.8rem; color: var(--ga-muted); margin-bottom: 0.75rem;">Ingrese la llave de 3, 6 o 12 meses proporcionada por su proveedor.</p>
+          
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <input type="text" name="llave_activacion" placeholder="Ej: LIC-6M-A1B2-C3D4" required style="font-family: var(--ga-mono); text-transform: uppercase; font-size: 0.9rem;" />
+            <button type="submit" style="background: var(--ga-accent); border-color: var(--ga-accent); white-space: nowrap; font-weight: 600;">
+              Activar Licencia
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Instrucciones de Pago y Renovación -->
+    <div class="panel">
+      <div class="panel-header">
+        <h3 style="margin: 0;">💳 Información de Renovación & Pago</h3>
+      </div>
+      <div class="panel-body">
+        <p style="font-size: 0.85rem; color: var(--ga-body); line-height: 1.5; margin-bottom: 1rem;">
+          Para adquirir una nueva clave de renovación de <strong>3, 6 o 12 Meses</strong>, realice la transferencia a cualquiera de nuestras cuentas oficiales:
+        </p>
+
+        <div style="background: var(--ga-canvas); padding: 1rem; border-radius: var(--ga-radius-sm); border: 1px solid var(--ga-border); font-size: 0.85rem; margin-bottom: 1rem;">
+          <div style="margin-bottom: 0.5rem;">
+            <strong>📲 Nequi / Daviplata:</strong>
+            <div style="font-family: var(--ga-mono); font-weight: 700; color: var(--ga-ink); font-size: 1rem;">300 123 4567</div>
+          </div>
+          <div style="margin-bottom: 0.5rem;">
+            <strong>🏦 Bancolombia (Ahorros):</strong>
+            <div style="font-family: var(--ga-mono); font-weight: 700; color: var(--ga-ink); font-size: 1rem;">123-456789-01</div>
+          </div>
+          <div>
+            <strong>Titular:</strong> ERP Almacén Colombia S.A.S.
+          </div>
+        </div>
+
+        <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--ga-radius-sm); padding: 1rem; font-size: 0.825rem; color: #1e40af;">
+          <strong>💬 Soporte Directo WhatsApp:</strong>
+          <br/>Envíe su comprobante de pago al <strong>+57 300 123 4567</strong> para recibir su clave de activación de forma inmediata.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

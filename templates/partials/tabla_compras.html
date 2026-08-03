@@ -1,100 +1,139 @@
 <section id="vista-compras">
   <header class="page-header">
-    <h2>Órdenes de compra</h2>
+    <h2>Órdenes de Compra y Proveedores</h2>
     <p>
-      Al marcar una orden como recibida, se actualiza el stock (consumible)
-      o se registran activos fijos según el tipo de ítem.
+      Gestión de pedidos a proveedores con impacto automático y atómico en el inventario y Kárdex al recibirlas.
     </p>
   </header>
 
-  <details class="panel" open>
-    <summary class="panel-header">Nueva orden de compra</summary>
+  <details class="panel" style="margin-bottom: 1.5rem;" open>
+    <summary class="panel-header" style="font-weight: 600; cursor: pointer;">
+      + Nueva Orden de Compra
+    </summary>
     <div class="panel-body">
-      <form class="inline-grid"
-            hx-post="/compras"
+      <form hx-post="/compras"
             hx-target="#contenido"
             hx-swap="innerHTML"
             hx-indicator="#nav-loading">
-        <label>
-          Proveedor
-          <input type="text" name="proveedor" required placeholder="Proveedor S.A." autocomplete="organization" />
-        </label>
-        <label>
-          Descripción del ítem
-          <input type="text" name="item_descripcion" required placeholder="Toner / Escritorio…" />
-        </label>
-        <label>
-          Cantidad
-          <input type="number" name="cantidad" min="1" value="1" required />
-        </label>
-        <label>
-          Valor unitario
-          <input type="number" name="precio_unitario" min="0" step="0.01" value="0" required />
-        </label>
-        <label>
-          Tipo de ítem
-          <select name="tipo_item" required>
-            <option value="consumible">Consumible (inventario)</option>
-            <option value="activo_fijo">Activo fijo</option>
-          </select>
-        </label>
-        <button type="submit">Crear orden</button>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+          <label>
+            Proveedor
+            <input type="text" name="proveedor" required placeholder="Distribuidora de Papel S.A." />
+          </label>
+          <label>
+            Bodega Destino
+            <select name="almacen_id" class="searchable" required>
+              {% for a in almacenes %}
+                <option value="{{ a.id }}">{{ a.nombre }}</option>
+              {% endfor %}
+            </select>
+          </label>
+        </div>
+
+        <div style="border-top: 1px dashed var(--pico-muted-border-color); padding-top: 1rem; margin-top: 0.5rem;">
+          <h4 style="font-size: 0.95rem; margin-bottom: 0.75rem;">Productos a Pedir</h4>
+          <div id="renglones-compra">
+            <div class="renglon-compra" style="display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 0.75rem; align-items: end; margin-bottom: 0.5rem;">
+              <label style="margin: 0; font-size: 0.85rem;">
+                Producto
+                <select name="producto_id[]" class="searchable" required style="margin: 0;">
+                  <option value="">-- Seleccionar Producto --</option>
+                  {% for p in productos %}
+                    <option value="{{ p.id }}">{{ p.codigo }} - {{ p.nombre }}</option>
+                  {% endfor %}
+                </select>
+              </label>
+              <label style="margin: 0; font-size: 0.85rem;">
+                Cantidad
+                <input type="number" name="cantidad[]" min="1" value="1" required style="margin: 0;" />
+              </label>
+              <label style="margin: 0; font-size: 0.85rem;">
+                Costo Unitario ($)
+                <input type="number" name="costo_unitario[]" min="0" step="0.01" value="0.00" required style="margin: 0;" />
+              </label>
+              <div></div>
+            </div>
+          </div>
+
+          <div style="margin-top: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
+            <button type="button" class="btn-sm outline" onclick="agregarRenglonCompra()">+ Agregar otro producto</button>
+            <button type="submit">Emitir Orden de Compra</button>
+          </div>
+        </div>
       </form>
     </div>
   </details>
 
   <div class="panel">
     <div class="panel-header">
-      <h3>Historial de órdenes</h3>
+      <h3>Historial de Órdenes de Compra</h3>
     </div>
     <div class="panel-body tight">
       <div class="table-wrap">
         <table class="data-table">
           <thead>
             <tr>
-              <th>#</th>
+              <th>Nº Orden</th>
+              <th>Fecha</th>
               <th>Proveedor</th>
-              <th>Ítem</th>
-              <th>Cantidad</th>
-              <th>V. unitario</th>
-              <th>Tipo</th>
+              <th>Bodega Destino</th>
+              <th class="text-right">Total ($)</th>
               <th>Estado</th>
-              <th>Acción</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
             {% if compras %}
               {% for c in compras %}
               <tr>
-                <td><code>{{ c.id }}</code></td>
-                <td>{{ c.proveedor }}</td>
-                <td>{{ c.item_descripcion }}</td>
-                <td>{{ c.cantidad }}</td>
-                <td>{{ "%.2f"|format(c.precio_unitario or 0) }}</td>
-                <td>{{ "Consumible" if c.tipo_item == "consumible" else "Activo fijo" }}</td>
-                <td><span class="badge {{ c.estado }}">{{ c.estado }}</span></td>
+                <td><code style="font-family: var(--ga-mono); font-size: 0.825rem;">{{ c.numero_orden }}</code></td>
+                <td class="num-col"><small>{{ c.fecha }}</small></td>
+                <td><strong>{{ c.proveedor }}</strong></td>
+                <td>{{ c.almacen_nombre }}</td>
+                <td class="text-right num-col"><strong>${{ "%.2f"|format(c.total) }}</strong></td>
                 <td>
-                  {% if c.estado == "pendiente" %}
-                  <button class="outline btn-sm"
-                          hx-post="/compras/{{ c.id }}/recibir"
-                          hx-target="#contenido"
-                          hx-swap="innerHTML"
-                          hx-indicator="#nav-loading"
-                          hx-confirm="¿Marcar como recibido? Se actualizará inventario o activos.">
-                    Marcar recibido
-                  </button>
+                  {% if c.estado == 'recibido' %}
+                    <span class="badge badge-success">✓ Recibido</span>
+                  {% elif c.estado == 'pendiente' %}
+                    <span class="badge badge-warning">⏳ Pendiente</span>
                   {% else %}
-                  <span style="color: var(--ga-muted)">—</span>
+                    <span class="badge badge-danger">✕ Rechazado</span>
+                  {% endif %}
+                </td>
+                <td>
+                  {% if c.estado == 'pendiente' %}
+                    {% if current_user and current_user.rol == 'admin' %}
+                    <div style="display: flex; gap: 0.3rem;">
+                      <form hx-post="/compras/{{ c.id }}/estado"
+                            hx-target="#contenido"
+                            hx-swap="innerHTML"
+                            hx-confirm="¿Confirmar recepción de mercancía? Incrementará automáticamente el stock y Kárdex.">
+                        <input type="hidden" name="estado" value="recibido" />
+                        <button type="submit" class="btn-sm outline" style="color: var(--pico-color-emerald-600); border-color: currentColor;">Recibir</button>
+                      </form>
+                      <form hx-post="/compras/{{ c.id }}/estado"
+                            hx-target="#contenido"
+                            hx-swap="innerHTML"
+                            hx-confirm="¿Rechazar esta orden de compra?">
+                        <input type="hidden" name="estado" value="rechazado" />
+                        <button type="submit" class="btn-sm outline secondary">Rechazar</button>
+                      </form>
+                    </div>
+                    {% else %}
+                    <small style="color: var(--ga-muted)">Revisión Admin Pendiente</small>
+                    {% endif %}
+                  {% else %}
+                    <small style="color: var(--ga-muted)">Procesado</small>
                   {% endif %}
                 </td>
               </tr>
               {% endfor %}
             {% else %}
               <tr>
-                <td colspan="8">
+                <td colspan="7">
                   <div class="empty-state">
-                    <strong>No hay órdenes de compra</strong>
-                    <p>Crea la primera orden con el formulario de arriba.</p>
+                    <strong>No hay órdenes de compra registradas</strong>
+                    <p>Registra pedidos a proveedores utilizando el formulario superior.</p>
                   </div>
                 </td>
               </tr>
@@ -104,4 +143,70 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function agregarRenglonCompra() {
+      const contenedor = document.getElementById("renglones-compra");
+      const primerRenglon = contenedor.querySelector(".renglon-compra");
+      
+      const selectOriginal = primerRenglon.querySelector("select[name='producto_id[]']");
+      const selectClonado = selectOriginal.cloneNode(true);
+      selectClonado.removeAttribute("data-combobox-initialized");
+      selectClonado.style.display = "";
+      selectClonado.selectedIndex = 0;
+
+      const nuevoRenglon = document.createElement("div");
+      nuevoRenglon.className = "renglon-compra";
+      nuevoRenglon.style.cssText = "display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 0.75rem; align-items: end; margin-bottom: 0.5rem;";
+
+      const lblProd = document.createElement("label");
+      lblProd.style.cssText = "margin: 0; font-size: 0.85rem;";
+      lblProd.textContent = "Producto ";
+      lblProd.appendChild(selectClonado);
+
+      const lblCant = document.createElement("label");
+      lblCant.style.cssText = "margin: 0; font-size: 0.85rem;";
+      lblCant.textContent = "Cantidad ";
+      const inpCant = document.createElement("input");
+      inpCant.type = "number";
+      inpCant.name = "cantidad[]";
+      inpCant.min = "1";
+      inpCant.value = "1";
+      inpCant.required = true;
+      inpCant.style.cssText = "margin: 0;";
+      lblCant.appendChild(inpCant);
+
+      const lblCosto = document.createElement("label");
+      lblCosto.style.cssText = "margin: 0; font-size: 0.85rem;";
+      lblCosto.textContent = "Costo Unitario ($) ";
+      const inpCosto = document.createElement("input");
+      inpCosto.type = "number";
+      inpCosto.name = "costo_unitario[]";
+      inpCosto.min = "0";
+      inpCosto.step = "0.01";
+      inpCosto.value = "0.00";
+      inpCosto.required = true;
+      inpCosto.style.cssText = "margin: 0;";
+      lblCosto.appendChild(inpCosto);
+
+      const divBtn = document.createElement("div");
+      const btnDel = document.createElement("button");
+      btnDel.type = "button";
+      btnDel.className = "btn-sm outline secondary";
+      btnDel.textContent = "✕";
+      btnDel.onclick = function() { nuevoRenglon.remove(); };
+      divBtn.appendChild(btnDel);
+
+      nuevoRenglon.appendChild(lblProd);
+      nuevoRenglon.appendChild(lblCant);
+      nuevoRenglon.appendChild(lblCosto);
+      nuevoRenglon.appendChild(divBtn);
+
+      contenedor.appendChild(nuevoRenglon);
+
+      if (typeof initAllSearchableSelects === "function") {
+        initAllSearchableSelects(nuevoRenglon);
+      }
+    }
+  </script>
 </section>

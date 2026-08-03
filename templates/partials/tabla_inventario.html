@@ -1,49 +1,67 @@
 <section id="vista-inventario">
-  <header class="page-header">
-    <h2>Inventario</h2>
-    <p>Consumibles y stock por almacén. Usa +1 / −1 o un ajuste personalizado.</p>
+  <header class="page-header" style="display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 50; overflow: visible;">
+    <div>
+      <h2>Catálogo de Productos e Inventarios</h2>
+      <p>Control de stock por bodega, precios de venta y alertas de stock mínimo.</p>
+    </div>
+    <div>
+      <select id="filtro-almacen"
+              class="searchable"
+              hx-get="/vistas/inventario"
+              hx-target="#contenido"
+              hx-swap="innerHTML"
+              name="almacen_id">
+        <option value="">-- Todas las Bodegas --</option>
+        {% for alm in almacenes %}
+          <option value="{{ alm.id }}" {% if almacen_seleccionado == alm.id %}selected{% endif %}>{{ alm.nombre }}</option>
+        {% endfor %}
+      </select>
+    </div>
   </header>
 
-  <details class="panel" open>
-    <summary class="panel-header">Registrar consumible</summary>
+  {% if current_user and current_user.rol == 'admin' %}
+  <details class="panel" style="margin-bottom: 1.5rem;">
+    <summary class="panel-header" style="font-weight: 600; cursor: pointer;">
+      + Registrar Nuevo Producto en Maestro (Admin)
+    </summary>
     <div class="panel-body">
-      <form class="inline-grid"
-            hx-post="/inventario"
+      <form hx-post="/productos"
             hx-target="#contenido"
             hx-swap="innerHTML"
             hx-indicator="#nav-loading">
-        <label>
-          Código
-          <input type="text" name="codigo" required placeholder="SKU-001" />
-        </label>
-        <label>
-          Nombre
-          <input type="text" name="nombre" required placeholder="Resmas de papel" />
-        </label>
-        <label>
-          Almacén
-          <select name="almacen_id" required>
-            {% for alm in almacenes %}
-            <option value="{{ alm.id }}">{{ alm.nombre }}</option>
-            {% endfor %}
-          </select>
-        </label>
-        <label>
-          Stock inicial
-          <input type="number" name="stock" min="0" value="0" required />
-        </label>
-        <label>
-          Precio unitario
-          <input type="number" name="precio_unitario" min="0" step="0.01" value="0" />
-        </label>
-        <button type="submit">Guardar</button>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+          <label>
+            Código (SKU)
+            <input type="text" name="codigo" required placeholder="PROD-001" />
+          </label>
+          <label>
+            Nombre del Producto
+            <input type="text" name="nombre" required placeholder="Teclado Ergonómico" />
+          </label>
+          <label>
+            Precio de Venta ($)
+            <input type="number" name="precio_venta" min="0" step="0.01" value="0.00" required />
+          </label>
+          <label>
+            Stock Mínimo (Alerta)
+            <input type="number" name="stock_minimo" min="0" value="5" required />
+          </label>
+        </div>
+
+        <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+          <p style="font-size: 0.8rem; color: var(--ga-muted); margin: 0;">
+            💡 <strong>Regla ERP:</strong> La creación registra únicamente el catálogo base. El stock se incrementa al recibir Órdenes de Compra o por Ajustes de Inventario.
+          </p>
+          <button type="submit">Guardar Producto en Catálogo</button>
+        </div>
       </form>
     </div>
   </details>
+  {% endif %}
 
   <div class="panel">
     <div class="panel-header">
-      <h3>Stock actual</h3>
+      <h3>Productos Registrados</h3>
     </div>
     <div class="panel-body tight">
       <div class="table-wrap">
@@ -52,57 +70,94 @@
             <tr>
               <th>Código</th>
               <th>Nombre</th>
-              <th>Almacén</th>
-              <th>Stock</th>
-              <th>P. unitario</th>
-              <th>Ajustar</th>
+              <th class="text-right">Precio Venta</th>
+              <th class="text-right">Stock Mínimo</th>
+              <th class="text-right">Stock Actual</th>
+              <th>Estado Stock</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            {% if items %}
-              {% for i in items %}
+            {% if productos %}
+              {% for p in productos %}
               <tr>
-                <td><code>{{ i.codigo }}</code></td>
-                <td>{{ i.nombre }}</td>
-                <td>{{ i.almacen_nombre }}</td>
-                <td>
-                  <span class="stock-pill {% if i.stock <= 5 %}bajo{% endif %}">{{ i.stock }}</span>
+                <td><code style="font-family: var(--ga-mono); font-size: 0.825rem;">{{ p.codigo }}</code></td>
+                <td><strong>{{ p.nombre }}</strong></td>
+                <td class="text-right num-col"><strong>${{ "%.2f"|format(p.precio_venta) }}</strong></td>
+                <td class="text-right num-col">{{ p.stock_minimo }}</td>
+                <td class="text-right">
+                  <span class="stock-pill {% if p.alerta_stock %}bajo{% endif %}">
+                    {{ p.stock_total }}
+                  </span>
                 </td>
-                <td>{{ "%.2f"|format(i.precio_unitario) }}</td>
                 <td>
-                  <div class="acciones">
-                    <form hx-post="/inventario/{{ i.id }}/ajustar"
-                          hx-target="#contenido"
-                          hx-swap="innerHTML"
-                          hx-indicator="#nav-loading">
-                      <input type="hidden" name="delta" value="1" />
-                      <button type="submit" class="outline btn-sm" title="Entrada +1">+1</button>
-                    </form>
-                    <form hx-post="/inventario/{{ i.id }}/ajustar"
-                          hx-target="#contenido"
-                          hx-swap="innerHTML"
-                          hx-indicator="#nav-loading">
-                      <input type="hidden" name="delta" value="-1" />
-                      <button type="submit" class="outline secondary btn-sm" title="Salida −1"
-                              {% if i.stock <= 0 %}disabled{% endif %}>−1</button>
-                    </form>
-                    <form hx-post="/inventario/{{ i.id }}/ajustar"
-                          hx-target="#contenido"
-                          hx-swap="innerHTML"
-                          hx-indicator="#nav-loading">
-                      <input type="number" name="delta" value="5" step="1" aria-label="Cantidad a ajustar" />
-                      <button type="submit" class="contrast btn-sm">Aplicar</button>
-                    </form>
+                  {% if p.alerta_stock %}
+                    <span class="badge badge-danger">⚠️ Reponer Stock</span>
+                  {% else %}
+                    <span class="badge badge-success">✓ Normal</span>
+                  {% endif %}
+                </td>
+                <td>
+                  <div style="display: flex; gap: 0.5rem; align-items: center;">
+                    {% if current_user and current_user.rol == 'admin' %}
+                    <details style="position: relative; display: inline-block;">
+                      <summary class="btn-sm contrast" style="cursor: pointer; font-size: 0.8rem; padding: 0.3rem 0.6rem;">Ajustar +/-</summary>
+                      <div style="position: absolute; right: 0; top: 100%; background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 100; min-width: 260px;">
+                        <form hx-post="/inventario/ajustar"
+                              hx-target="#contenido"
+                              hx-swap="innerHTML"
+                              hx-indicator="#nav-loading">
+                          <input type="hidden" name="producto_id" value="{{ p.id }}" />
+                          <label style="font-size: 0.8rem;">
+                            Bodega:
+                            <select name="almacen_id" required style="font-size: 0.8rem;">
+                              {% for alm in almacenes %}
+                                <option value="{{ alm.id }}">{{ alm.nombre }}</option>
+                              {% endfor %}
+                            </select>
+                          </label>
+                          <label style="font-size: 0.8rem;">
+                            Tipo:
+                            <select name="tipo_movimiento" style="font-size: 0.8rem;">
+                              <option value="ENTRADA">Entrada (+)</option>
+                              <option value="SALIDA">Salida (-)</option>
+                              <option value="AJUSTE">Ajuste Directo</option>
+                            </select>
+                          </label>
+                          <label style="font-size: 0.8rem;">
+                            Cantidad:
+                            <input type="number" name="cantidad" min="1" value="1" required style="font-size: 0.8rem;" />
+                          </label>
+                          <label style="font-size: 0.8rem;">
+                            Costo Unitario ($):
+                            <input type="number" name="costo_unitario" min="0" step="0.01" value="0.00" style="font-size: 0.8rem;" />
+                          </label>
+                          <label style="font-size: 0.8rem;">
+                            Referencia / Motivo:
+                            <input type="text" name="referencia" value="Ajuste manual" style="font-size: 0.8rem;" />
+                          </label>
+                          <button type="submit" class="btn-sm" style="margin-top: 0.5rem; width: 100%;">Aplicar Ajuste</button>
+                        </form>
+                      </div>
+                    </details>
+                    {% endif %}
+                    
+                    <a href="#"
+                       hx-get="/vistas/kardex?producto_id={{ p.id }}"
+                       hx-target="#contenido"
+                       hx-swap="innerHTML"
+                       class="btn-sm outline"
+                       title="Ver Kárdex del Producto">📋 Kárdex</a>
                   </div>
                 </td>
               </tr>
               {% endfor %}
             {% else %}
               <tr>
-                <td colspan="6">
+                <td colspan="7">
                   <div class="empty-state">
-                    <strong>Inventario vacío</strong>
-                    <p>Registra un consumible o recibe una compra de tipo consumible.</p>
+                    <strong>Catálogo sin productos</strong>
+                    <p>Los productos creados por el administrador aparecerán aquí.</p>
                   </div>
                 </td>
               </tr>

@@ -1,0 +1,250 @@
+<section id="vista-facturacion">
+  <header class="page-header">
+    <h2>Facturación Rápida / Mostrador POS</h2>
+    <p>Terminal de ventas en mostrador con descuento atómico de stock, desglose de IVA y estructura preparada para Facturación Electrónica DIAN.</p>
+  </header>
+
+  <div class="pos-grid" style="display: grid; grid-template-columns: 3fr 2fr; gap: 1.5rem; align-items: start;">
+    <!-- Formulario POS Terminal -->
+    <div class="panel">
+      <div class="panel-header" style="background: var(--ga-sidebar-bg); color: white;">
+        <h3 style="margin: 0; color: white;">💳 Terminal de Caja / Nueva Venta POS</h3>
+        <span class="badge badge-info" style="font-size: 0.75rem;">Modo Local / Listo DIAN</span>
+      </div>
+      <div class="panel-body">
+        <form hx-post="/facturas/crear"
+              hx-target="#contenido"
+              hx-swap="innerHTML"
+              hx-indicator="#nav-loading"
+              id="form-pos">
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem;">
+            <label style="font-size: 0.8rem;">
+              Bodega de Despacho
+              <select name="almacen_id" id="pos-almacen" class="searchable" required style="font-size: 0.85rem;">
+                {% for a in almacenes %}
+                  <option value="{{ a.id }}">{{ a.nombre }}</option>
+                {% endfor %}
+              </select>
+            </label>
+            <label style="font-size: 0.8rem;">
+              Método de Pago
+              <select name="metodo_pago" required style="font-size: 0.85rem;">
+                <option value="Efectivo">Efectivo</option>
+                <option value="Tarjeta Debit/Credit">Tarjeta Débito/Crédito</option>
+                <option value="Transferencia">Transferencia Bancaria</option>
+              </select>
+            </label>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem;">
+            <label style="font-size: 0.8rem;">
+              Nombre / Razón Social Cliente
+              <input type="text" name="cliente_nombre" value="Cliente General" required style="font-size: 0.85rem;" />
+            </label>
+            <label style="font-size: 0.8rem;">
+              NIT / Cédula
+              <input type="text" name="cliente_nit" value="222222222222" required style="font-size: 0.85rem;" />
+            </label>
+            <label style="font-size: 0.8rem;">
+              Correo Electrónico (FE)
+              <input type="email" name="cliente_email" placeholder="cliente@correo.com" style="font-size: 0.85rem;" />
+            </label>
+          </div>
+
+          <!-- Renglones de venta -->
+          <div style="border: 1px solid var(--ga-border); border-radius: var(--ga-radius-sm); padding: 0.85rem; background: #ffffff;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <strong style="font-size: 0.9rem; color: var(--ga-ink);">🛒 Ítems del Comprobante</strong>
+              <button type="button" class="btn-sm outline" onclick="agregarRenglonVenta()">+ Agregar Ítem</button>
+            </div>
+
+            <div id="renglones-venta">
+              <div class="renglon-venta" style="display: grid; grid-template-columns: 2.5fr 1fr 1.2fr auto; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;">
+                <select name="producto_id[]" class="searchable" required onchange="actualizarPrecioVenta(this)" style="margin: 0; font-size: 0.85rem;">
+                  <option value="" data-precio="0">-- Seleccionar Producto --</option>
+                  {% for p in productos %}
+                    <option value="{{ p.id }}" data-precio="{{ p.precio_venta }}">{{ p.codigo }} - {{ p.nombre }} (${{ "%.2f"|format(p.precio_venta) }})</option>
+                  {% endfor %}
+                </select>
+                <input type="number" name="cantidad[]" min="1" value="1" required oninput="calcularTotalPOS()" style="margin: 0; font-size: 0.85rem;" placeholder="Cant." />
+                <input type="number" name="precio_unitario[]" min="0" step="0.01" value="0.00" required oninput="calcularTotalPOS()" style="margin: 0; font-size: 0.85rem;" placeholder="Precio Unit." />
+                <button type="button" class="btn-sm outline secondary" onclick="this.closest('.renglon-venta').remove(); calcularTotalPOS();">✕</button>
+              </div>
+            </div>
+
+            <!-- Desglose de Totales e IVA -->
+            <div style="border-top: 1px dashed var(--ga-border); margin-top: 1rem; padding-top: 0.75rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--ga-muted); margin-bottom: 0.25rem;">
+                <span>Subtotal (Base Imponible):</span>
+                <span id="pos-subtotal-display" class="num-col">$0.00</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--ga-muted); margin-bottom: 0.5rem;">
+                <span>IVA Estimado (19%):</span>
+                <span id="pos-iva-display" class="num-col">$0.00</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--ga-border); padding-top: 0.6rem;">
+                <span style="font-size: 1.1rem; font-weight: 700; color: var(--ga-ink);">TOTAL COMPROBANTE:</span>
+                <span id="pos-total-display" style="font-size: 1.6rem; font-weight: 700; color: var(--ga-ok); font-family: var(--ga-mono);">$0.00</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.25rem;">
+            <button type="submit" style="width: 100%; padding: 0.85rem; font-size: 1.1rem; font-weight: 700; background: var(--ga-ok); border-color: var(--ga-ok);">
+              ✓ PROCESAR VENTA E IMPRIMIR TICKET
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Historial de Ventas Recientes -->
+    <div class="panel">
+      <div class="panel-header">
+        <h3 style="margin: 0;">📋 Historial de Facturas POS</h3>
+      </div>
+      <div class="panel-body tight">
+        <div class="table-wrap">
+          <table class="data-table" style="font-size: 0.825rem;">
+            <thead>
+              <tr>
+                <th>Nº Factura</th>
+                <th>Cliente / NIT</th>
+                <th class="text-right">Total</th>
+                <th>Estado</th>
+                <th class="text-right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% if ventas %}
+                {% for v in ventas %}
+                <tr>
+                  <td><code style="font-family: var(--ga-mono); font-size: 0.825rem;">{{ v.numero_factura }}</code></td>
+                  <td>
+                    <strong>{{ v.cliente_nombre }}</strong>
+                    <br/><small style="color: var(--ga-muted);">NIT: {{ v.cliente_nit }}</small>
+                  </td>
+                  <td class="text-right num-col"><strong>${{ "%.2f"|format(v.total) }}</strong></td>
+                  <td>
+                    {% if v.estado == 'anulada' %}
+                      <span class="badge badge-danger">✕ ANULADA</span>
+                    {% else %}
+                      <span class="badge badge-success">✓ COMPLETADA</span>
+                    {% endif %}
+                  </td>
+                  <td class="text-right">
+                    <div style="display: flex; gap: 0.3rem; justify-content: flex-end;">
+                      <a href="/facturas/{{ v.id }}/ticket" target="_blank" class="btn-sm outline" title="Imprimir Comprobante POS" style="padding: 0.2rem 0.4rem; font-size: 0.75rem;">🖨️ Ticket</a>
+                      {% if current_user and current_user.rol == 'admin' and v.estado != 'anulada' %}
+                      <form hx-post="/facturas/{{ v.id }}/anular"
+                            hx-target="#contenido"
+                            hx-swap="innerHTML"
+                            hx-confirm="¿Está seguro de anular la factura {{ v.numero_factura }}? Se devolverá el stock a la bodega automáticamente.">
+                        <button type="submit" class="btn-sm outline secondary" style="padding: 0.2rem 0.4rem; font-size: 0.75rem; color: var(--ga-danger);">Anular</button>
+                      </form>
+                      {% endif %}
+                    </div>
+                  </td>
+                </tr>
+                {% endfor %}
+              {% else %}
+                <tr>
+                  <td colspan="5" style="text-align: center; color: var(--ga-muted); padding: 1.5rem;">
+                    Sin ventas registradas en el sistema
+                  </td>
+                </tr>
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function actualizarPrecioVenta(selectElem) {
+      const opt = selectElem.options[selectElem.selectedIndex];
+      const precio = opt ? opt.getAttribute("data-precio") || 0 : 0;
+      const row = selectElem.closest(".renglon-venta");
+      const precioInput = row.querySelector("input[name='precio_unitario[]']");
+      if (precioInput) {
+        precioInput.value = parseFloat(precio).toFixed(2);
+      }
+      calcularTotalPOS();
+    }
+
+    function agregarRenglonVenta() {
+      const contenedor = document.getElementById("renglones-venta");
+      const primerRenglon = contenedor.querySelector(".renglon-venta");
+      
+      const selectOriginal = primerRenglon.querySelector("select[name='producto_id[]']");
+      const selectClonado = selectOriginal.cloneNode(true);
+      selectClonado.removeAttribute("data-combobox-initialized");
+      selectClonado.style.display = "";
+      selectClonado.selectedIndex = 0;
+
+      const nuevoRenglon = document.createElement("div");
+      nuevoRenglon.className = "renglon-venta";
+      nuevoRenglon.style.cssText = "display: grid; grid-template-columns: 2.5fr 1fr 1.2fr auto; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem;";
+
+      const inputCant = document.createElement("input");
+      inputCant.type = "number";
+      inputCant.name = "cantidad[]";
+      inputCant.min = "1";
+      inputCant.value = "1";
+      inputCant.required = true;
+      inputCant.style.cssText = "margin: 0; font-size: 0.85rem;";
+      inputCant.placeholder = "Cant.";
+      inputCant.oninput = calcularTotalPOS;
+
+      const inputPrecio = document.createElement("input");
+      inputPrecio.type = "number";
+      inputPrecio.name = "precio_unitario[]";
+      inputPrecio.min = "0";
+      inputPrecio.step = "0.01";
+      inputPrecio.value = "0.00";
+      inputPrecio.required = true;
+      inputPrecio.style.cssText = "margin: 0; font-size: 0.85rem;";
+      inputPrecio.placeholder = "Precio";
+      inputPrecio.oninput = calcularTotalPOS;
+
+      const btnDel = document.createElement("button");
+      btnDel.type = "button";
+      btnDel.className = "btn-sm outline secondary";
+      btnDel.textContent = "✕";
+      btnDel.onclick = function() {
+        nuevoRenglon.remove();
+        calcularTotalPOS();
+      };
+
+      nuevoRenglon.appendChild(selectClonado);
+      nuevoRenglon.appendChild(inputCant);
+      nuevoRenglon.appendChild(inputPrecio);
+      nuevoRenglon.appendChild(btnDel);
+
+      contenedor.appendChild(nuevoRenglon);
+
+      if (typeof initAllSearchableSelects === "function") {
+        initAllSearchableSelects(nuevoRenglon);
+      }
+      calcularTotalPOS();
+    }
+
+    function calcularTotalPOS() {
+      let total = 0;
+      document.querySelectorAll(".renglon-venta").forEach(row => {
+        const cant = parseFloat(row.querySelector("input[name='cantidad[]']").value) || 0;
+        const prec = parseFloat(row.querySelector("input[name='precio_unitario[]']").value) || 0;
+        total += cant * prec;
+      });
+
+      const subtotal = total / 1.19;
+      const iva = total - subtotal;
+
+      document.getElementById("pos-subtotal-display").textContent = "$" + subtotal.toFixed(2);
+      document.getElementById("pos-iva-display").textContent = "$" + iva.toFixed(2);
+      document.getElementById("pos-total-display").textContent = "$" + total.toFixed(2);
+    }
+  </script>
+</section>
