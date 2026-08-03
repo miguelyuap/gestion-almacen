@@ -1,7 +1,13 @@
 <section id="vista-facturacion">
-  <header class="page-header">
-    <h2>Facturación Rápida / Mostrador POS</h2>
-    <p>Terminal de ventas en mostrador con descuento atómico de stock, desglose de IVA y estructura preparada para Facturación Electrónica DIAN.</p>
+  <header class="page-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+    <div>
+      <h2>Facturación Rápida / Mostrador POS</h2>
+      <p>Terminal de ventas en mostrador con descuento atómico de stock, desglose de IVA y estructura preparada para Facturación Electrónica DIAN.</p>
+    </div>
+    <div style="display: flex; gap: 0.5rem; align-items: center;">
+      <a href="/reportes/excel/ventas" target="_blank" class="btn-sm outline" style="padding: 0.4rem 0.75rem; font-size: 0.825rem; font-weight: 600;">📊 Exportar Ventas Excel</a>
+      <a href="/reportes/pdf/cierre-caja" target="_blank" class="btn-sm outline" style="padding: 0.4rem 0.75rem; font-size: 0.825rem; font-weight: 600; color: var(--ga-accent); border-color: var(--ga-accent);">📄 Cierre Z de Caja (PDF)</a>
+    </div>
   </header>
 
   <div class="pos-grid" style="display: grid; grid-template-columns: 3fr 2fr; gap: 1.5rem; align-items: start;">

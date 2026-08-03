@@ -3,8 +3,7 @@ Servidor web Flask — ERP Local para Gestión de Almacén, Kárdex, Compras y F
 Sistema de autenticación y control de acceso basado en roles (Admin/Empleado).
 """
 
-from __future__ import annotations
-
+from datetime import datetime
 from functools import wraps
 from flask import (
     Flask,
@@ -16,9 +15,11 @@ from flask import (
     abort,
     make_response,
     g,
+    send_file,
 )
 
 import base_datos as db
+import reportes
 
 app = Flask(__name__)
 app.secret_key = "erp_almacen_secret_key_local_desktop_2026"
@@ -483,6 +484,81 @@ def crear_usuario():
     except Exception as exc:
         abort(400, description=str(exc))
     return vista_usuarios()
+
+
+# ---------------------------------------------------------------------------
+# Módulo de Reportes & Exportaciones (Excel & PDF)
+# ---------------------------------------------------------------------------
+
+@app.route("/reportes/excel/inventario")
+@login_required
+def report_excel_inventario():
+    productos = db.listar_productos()
+    excel_stream = reportes.generar_excel_inventario(productos)
+    filename = f"Inventario_Valorizado_{datetime.now().strftime('%Y%m%d_%H%M')}.xlsx"
+    return send_file(
+        excel_stream,
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        as_attachment=True,
+        download_name=filename,
+    )
+
+
+@app.route("/reportes/excel/ventas")
+@login_required
+def report_excel_ventas():
+    ventas = db.listar_ventas()
+    excel_stream = reportes.generar_excel_ventas(ventas)
+    filename = f"Historial_Ventas_POS_{datetime.now().strftime('%Y%m%d_%H%M')}.xlsx"
+    return send_file(
+        excel_stream,
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        as_attachment=True,
+        download_name=filename,
+    )
+
+
+@app.route("/reportes/excel/kardex")
+@login_required
+def report_excel_kardex():
+    kardex_list = db.listar_kardex(limit=500)
+    excel_stream = reportes.generar_excel_kardex(kardex_list)
+    filename = f"Movimientos_Kardex_{datetime.now().strftime('%Y%m%d_%H%M')}.xlsx"
+    return send_file(
+        excel_stream,
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        as_attachment=True,
+        download_name=filename,
+    )
+
+
+@app.route("/reportes/pdf/cierre-caja")
+@login_required
+def report_pdf_cierre_caja():
+    fecha_hoy = datetime.now().strftime("%Y-%m-%d")
+    ventas_hoy = [v for v in db.listar_ventas() if v["fecha"].startswith(fecha_hoy) and v["estado"] != "anulada"]
+
+    total_ventas = sum(v["total"] for v in ventas_hoy)
+    efectivo = sum(v["total"] for v in ventas_hoy if v["metodo_pago"] == "Efectivo")
+    tarjeta = sum(v["total"] for v in ventas_hoy if "Tarjeta" in v["metodo_pago"])
+    transferencia = sum(v["total"] for v in ventas_hoy if "Transferencia" in v["metodo_pago"])
+
+    resumen_dia = {
+        "total_ventas": total_ventas,
+        "efectivo": efectivo,
+        "tarjeta": tarjeta,
+        "transferencia": transferencia,
+        "num_transacciones": len(ventas_hoy),
+    }
+
+    pdf_stream = reportes.generar_pdf_cierre_caja(resumen_dia, ventas_hoy, fecha_hoy)
+    filename = f"Cierre_Z_Caja_{fecha_hoy}.pdf"
+    return send_file(
+        pdf_stream,
+        mimetype="application/pdf",
+        as_attachment=True,
+        download_name=filename,
+    )
 
 
 # ---------------------------------------------------------------------------
