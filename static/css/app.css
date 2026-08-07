@@ -70,6 +70,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -82,15 +87,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Layout Shell */
+/* Layout Shell con Scroll Aislado */
 .app-shell {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
-/* Sidebar Navigation */
+/* Sidebar Navigation Fijo / Estático */
 .sidebar {
   width: 260px;
+  height: 100vh;
   flex-shrink: 0;
   background-color: var(--ga-sidebar-bg);
   color: var(--ga-sidebar-text);
@@ -98,6 +106,7 @@ body {
   flex-direction: column;
   padding: 1.25rem 1rem;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
+  overflow-y: auto;
 }
 
 .brand {
@@ -180,12 +189,14 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Main Canvas Content (Full-Width Desktop App) */
+/* Main Canvas Content (Full-Width Desktop App con Scroll Independiente) */
 .main-area,
 .main-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
   min-width: 0;
   width: 100%;
   max-width: 100%;

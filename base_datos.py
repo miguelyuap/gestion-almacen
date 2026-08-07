@@ -167,7 +167,7 @@ def inicializar_db() -> None:
                 total              REAL NOT NULL DEFAULT 0,
                 metodo_pago        TEXT NOT NULL DEFAULT 'Efectivo',
                 estado             TEXT NOT NULL DEFAULT 'completada' CHECK (estado IN ('completada', 'anulada')),
-                estado_electronico TEXT NOT NULL DEFAULT 'no_aplica' CHECK (estado_electronico IN ('no_aplica', 'pendiente', 'transmitido')),
+                estado_electronico TEXT NOT NULL DEFAULT 'no_aplica' CHECK (estado_electronico IN ('no_aplica', 'pendiente', 'transmitido', 'error')),
                 cufe               TEXT DEFAULT NULL,
                 fecha              TEXT NOT NULL,
                 FOREIGN KEY (almacen_id) REFERENCES almacenes(id),
@@ -234,6 +234,8 @@ def inicializar_db() -> None:
             conn.execute("ALTER TABLE ventas ADD COLUMN estado_electronico TEXT NOT NULL DEFAULT 'no_aplica'")
         if "cufe" not in cols_ventas:
             conn.execute("ALTER TABLE ventas ADD COLUMN cufe TEXT DEFAULT NULL")
+        if "mensaje_error_electronico" not in cols_ventas:
+            conn.execute("ALTER TABLE ventas ADD COLUMN mensaje_error_electronico TEXT DEFAULT NULL")
 
         cols_detalles = {col["name"] for col in conn.execute("PRAGMA table_info(ventas_detalles)").fetchall()}
         if "impuesto_porcentaje" not in cols_detalles:
@@ -871,6 +873,40 @@ def anular_factura(factura_id: int, usuario_id: int | None = None) -> bool:
             )
 
         return True
+
+
+def actualizar_estado_electronico_venta(
+    venta_id: int,
+    estado_electronico: str,
+    cufe: Optional[str] = None,
+    mensaje_error: Optional[str] = None,
+) -> None:
+    """Actualiza el estado de la factura electrónica, CUFE y mensaje de error en SQLite."""
+    with conexion() as conn:
+        try:
+            conn.execute(
+                """
+                UPDATE ventas
+                SET estado_electronico = ?,
+                    cufe = COALESCE(?, cufe),
+                    mensaje_error_electronico = ?
+                WHERE id = ?
+                """,
+                (estado_electronico, cufe, mensaje_error, venta_id),
+            )
+        except sqlite3.IntegrityError:
+            # Fallback para esquemas legacy con CHECK estricto: asigna 'pendiente' preservando el mensaje_error_electronico
+            estado_fallback = "pendiente" if estado_electronico == "error" else estado_electronico
+            conn.execute(
+                """
+                UPDATE ventas
+                SET estado_electronico = ?,
+                    cufe = COALESCE(?, cufe),
+                    mensaje_error_electronico = ?
+                WHERE id = ?
+                """,
+                (estado_fallback, cufe, mensaje_error, venta_id),
+            )
 
 
 

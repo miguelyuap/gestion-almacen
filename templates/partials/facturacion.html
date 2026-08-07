@@ -136,12 +136,28 @@
                     {% if v.estado == 'anulada' %}
                       <span class="badge badge-danger">✕ ANULADA</span>
                     {% else %}
-                      <span class="badge badge-success">✓ COMPLETADA</span>
+                      <span class="badge badge-success">✓ LOCAL</span>
+                    {% endif %}
+                    <br/>
+                    {% if v.estado_electronico == 'transmitido' %}
+                      <span class="badge badge-info" title="CUFE: {{ v.cufe }}">⚡ DIAN OK</span>
+                    {% elif v.estado_electronico == 'error' %}
+                      <span class="badge badge-warning" title="{{ v.mensaje_error_electronico or 'Error al transmitir a DIAN' }}">⚠️ ERROR DIAN</span>
+                    {% else %}
+                      <span class="badge" style="background: #e2e8f0; color: #475569;">PENDIENTE</span>
                     {% endif %}
                   </td>
                   <td class="text-right">
-                    <div style="display: flex; gap: 0.3rem; justify-content: flex-end;">
+                    <div style="display: flex; gap: 0.3rem; justify-content: flex-end; align-items: center;">
                       <a href="/facturas/{{ v.id }}/ticket" target="_blank" class="btn-sm outline" title="Imprimir Comprobante POS" style="padding: 0.2rem 0.4rem; font-size: 0.75rem;">🖨️ Ticket</a>
+                      {% if v.estado != 'anulada' and v.estado_electronico != 'transmitido' %}
+                      <form hx-post="/facturas/{{ v.id }}/retransmitir"
+                            hx-target="#contenido"
+                            hx-swap="innerHTML"
+                            hx-indicator="#nav-loading">
+                        <button type="submit" class="btn-sm outline" title="Retransmitir Factura Electrónica a DIAN/HKA" style="padding: 0.2rem 0.4rem; font-size: 0.75rem; color: #2563eb; border-color: #2563eb;">⚡ Reintentar</button>
+                      </form>
+                      {% endif %}
                       {% if current_user and current_user.rol == 'admin' and v.estado != 'anulada' %}
                       <form hx-post="/facturas/{{ v.id }}/anular"
                             hx-target="#contenido"

@@ -1,29 +1,19 @@
 <section id="vista-inventario">
-  <header class="page-header" style="display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 50; overflow: visible;">
+  <header class="page-header" style="display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 50; flex-wrap: wrap; gap: 1rem;">
     <div>
-      <h2>Catálogo de Productos e Inventarios</h2>
-      <p>Control de stock por bodega, precios de venta y alertas de stock mínimo.</p>
+      <h2>Maestro de Productos</h2>
+      <p>Catálogo maestro centralizado de artículos, SKU, precios de venta, stock mínimo y existencias acumuladas.</p>
     </div>
     <div style="display: flex; align-items: center; gap: 0.75rem;">
-      <a href="/reportes/excel/inventario" target="_blank" class="btn-sm outline" style="padding: 0.4rem 0.75rem; font-size: 0.825rem; font-weight: 600;">📊 Exportar Excel</a>
-      <select id="filtro-almacen"
-              class="searchable"
-              hx-get="/vistas/inventario"
-              hx-target="#contenido"
-              hx-swap="innerHTML"
-              name="almacen_id">
-        <option value="">-- Todas las Bodegas --</option>
-        {% for alm in almacenes %}
-          <option value="{{ alm.id }}" {% if almacen_seleccionado == alm.id %}selected{% endif %}>{{ alm.nombre }}</option>
-        {% endfor %}
-      </select>
+      <a href="/reportes/excel/inventario" target="_blank" class="btn-sm outline" style="padding: 0.45rem 0.85rem; font-size: 0.825rem; font-weight: 600;">📊 Exportar Excel</a>
     </div>
   </header>
 
   {% if current_user and current_user.rol == 'admin' %}
   <details class="panel" style="margin-bottom: 1.5rem;">
-    <summary class="panel-header" style="font-weight: 600; cursor: pointer;">
-      + Registrar Nuevo Producto en Maestro (Admin)
+    <summary class="panel-header" style="font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: space-between;">
+      <span>+ Registrar Nuevo Producto en Maestro (Admin)</span>
+      <span class="badge badge-info" style="font-size: 0.75rem;">Ficha Base ERP</span>
     </summary>
     <div class="panel-body">
       <form hx-post="/productos"
@@ -33,11 +23,11 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
           <label>
             Código (SKU)
-            <input type="text" name="codigo" required placeholder="PROD-001" />
+            <input type="text" name="codigo" required placeholder="PROD-001" style="font-family: var(--ga-mono);" />
           </label>
           <label>
             Nombre del Producto
-            <input type="text" name="nombre" required placeholder="Teclado Ergonómico" />
+            <input type="text" name="nombre" required placeholder="Teclado Ergonómico Wireless" />
           </label>
           <label>
             Precio de Venta ($)
@@ -51,7 +41,7 @@
 
         <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
           <p style="font-size: 0.8rem; color: var(--ga-muted); margin: 0;">
-            💡 <strong>Regla ERP:</strong> La creación registra únicamente el catálogo base. El stock se incrementa al recibir Órdenes de Compra o por Ajustes de Inventario.
+            💡 <strong>Regla ERP:</strong> La creación registra únicamente la ficha del producto. El stock inicial es 0 y se incrementa al recibir Compras o mediante Ajustes.
           </p>
           <button type="submit">Guardar Producto en Catálogo</button>
         </div>
@@ -61,28 +51,55 @@
   {% endif %}
 
   <div class="panel">
-    <div class="panel-header">
-      <h3>Productos Registrados</h3>
+    <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+      <h3 style="margin: 0;">📦 Catálogo de Productos Registrados</h3>
+      <span id="contador-productos" class="badge badge-info" style="font-size: 0.75rem;">
+        Mostrando {{ productos|length }} productos
+      </span>
     </div>
+
+    <!-- Barra de Filtros y Buscador Dinámico del Maestro -->
+    <div style="padding: 0.85rem 1.25rem; background: #fafcfd; border-bottom: 1px solid var(--ga-border-light); display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; justify-content: space-between;">
+      <div style="display: flex; gap: 0.75rem; align-items: center; flex: 1; min-width: 280px; flex-wrap: wrap;">
+        <div style="position: relative; flex: 1; min-width: 200px;">
+          <input type="text"
+                 id="buscar-producto"
+                 placeholder="🔍 Buscar por nombre o código (SKU)..."
+                 onkeyup="filtrarTablaProductos()"
+                 oninput="filtrarTablaProductos()"
+                 style="margin: 0; padding-left: 2.2rem; font-size: 0.85rem; height: 38px;" />
+          <span style="position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--ga-muted); pointer-events: none; font-size: 0.9rem;">🔍</span>
+        </div>
+        <select id="filtro-estado" onchange="filtrarTablaProductos()" style="margin: 0; width: 180px; font-size: 0.85rem; height: 38px;">
+          <option value="todos">Todos los Estados</option>
+          <option value="normal">✓ Normal</option>
+          <option value="bajo">⚠️ Stock Bajo</option>
+        </select>
+      </div>
+    </div>
+
     <div class="panel-body tight">
       <div class="table-wrap">
         <table class="data-table">
           <thead>
             <tr>
-              <th>Código</th>
-              <th>Nombre</th>
+              <th>Código (SKU)</th>
+              <th>Nombre del Producto</th>
               <th class="text-right">Precio Venta</th>
               <th class="text-right">Stock Mínimo</th>
-              <th class="text-right">Stock Actual</th>
+              <th class="text-right">Stock Total Acumulado</th>
               <th>Estado Stock</th>
-              <th>Acciones</th>
+              <th class="text-right">Acciones</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="tabla-productos-body">
             {% if productos %}
               {% for p in productos %}
-              <tr>
-                <td><code style="font-family: var(--ga-mono); font-size: 0.825rem;">{{ p.codigo }}</code></td>
+              <tr class="fila-producto"
+                  data-codigo="{{ p.codigo }}"
+                  data-nombre="{{ p.nombre }}"
+                  data-alerta="{% if p.alerta_stock %}true{% else %}false{% endif %}">
+                <td><code style="font-family: var(--ga-mono); font-size: 0.825rem; font-weight: 600;">{{ p.codigo }}</code></td>
                 <td><strong>{{ p.nombre }}</strong></td>
                 <td class="text-right num-col"><strong>${{ "%.2f"|format(p.precio_venta) }}</strong></td>
                 <td class="text-right num-col">{{ p.stock_minimo }}</td>
@@ -98,46 +115,46 @@
                     <span class="badge badge-success">✓ Normal</span>
                   {% endif %}
                 </td>
-                <td>
-                  <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <td class="text-right">
+                  <div style="display: flex; gap: 0.5rem; align-items: center; justify-content: flex-end;">
                     {% if current_user and current_user.rol == 'admin' %}
                     <details style="position: relative; display: inline-block;">
-                      <summary class="btn-sm contrast" style="cursor: pointer; font-size: 0.8rem; padding: 0.3rem 0.6rem;">Ajustar +/-</summary>
-                      <div style="position: absolute; right: 0; top: 100%; background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 100; min-width: 260px;">
+                      <summary class="btn-sm outline" style="cursor: pointer; font-size: 0.775rem; padding: 0.25rem 0.55rem; color: var(--ga-accent); border-color: var(--ga-accent);">Ajustar +/-</summary>
+                      <div style="position: absolute; right: 0; top: 100%; background: #ffffff; border: 1px solid var(--ga-border); border-radius: var(--ga-radius-sm); padding: 1rem; box-shadow: var(--ga-shadow-lg); z-index: 1000; min-width: 270px; text-align: left;">
                         <form hx-post="/inventario/ajustar"
                               hx-target="#contenido"
                               hx-swap="innerHTML"
                               hx-indicator="#nav-loading">
                           <input type="hidden" name="producto_id" value="{{ p.id }}" />
-                          <label style="font-size: 0.8rem;">
-                            Bodega:
-                            <select name="almacen_id" required style="font-size: 0.8rem;">
+                          <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--ga-muted);">
+                            Bodega de Destino:
+                            <select name="almacen_id" required style="font-size: 0.85rem; margin-top: 0.25rem;">
                               {% for alm in almacenes %}
                                 <option value="{{ alm.id }}">{{ alm.nombre }}</option>
                               {% endfor %}
                             </select>
                           </label>
-                          <label style="font-size: 0.8rem;">
-                            Tipo:
-                            <select name="tipo_movimiento" style="font-size: 0.8rem;">
+                          <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--ga-muted); margin-top: 0.5rem;">
+                            Tipo de Movimiento:
+                            <select name="tipo_movimiento" style="font-size: 0.85rem; margin-top: 0.25rem;">
                               <option value="ENTRADA">Entrada (+)</option>
                               <option value="SALIDA">Salida (-)</option>
                               <option value="AJUSTE">Ajuste Directo</option>
                             </select>
                           </label>
-                          <label style="font-size: 0.8rem;">
+                          <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--ga-muted); margin-top: 0.5rem;">
                             Cantidad:
-                            <input type="number" name="cantidad" min="1" value="1" required style="font-size: 0.8rem;" />
+                            <input type="number" name="cantidad" min="1" value="1" required style="font-size: 0.85rem; margin-top: 0.25rem;" />
                           </label>
-                          <label style="font-size: 0.8rem;">
+                          <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--ga-muted); margin-top: 0.5rem;">
                             Costo Unitario ($):
-                            <input type="number" name="costo_unitario" min="0" step="0.01" value="0.00" style="font-size: 0.8rem;" />
+                            <input type="number" name="costo_unitario" min="0" step="0.01" value="0.00" style="font-size: 0.85rem; margin-top: 0.25rem;" />
                           </label>
-                          <label style="font-size: 0.8rem;">
+                          <label style="font-size: 0.75rem; text-transform: uppercase; color: var(--ga-muted); margin-top: 0.5rem;">
                             Referencia / Motivo:
-                            <input type="text" name="referencia" value="Ajuste manual" style="font-size: 0.8rem;" />
+                            <input type="text" name="referencia" value="Ajuste manual" style="font-size: 0.85rem; margin-top: 0.25rem;" />
                           </label>
-                          <button type="submit" class="btn-sm" style="margin-top: 0.5rem; width: 100%;">Aplicar Ajuste</button>
+                          <button type="submit" class="btn-sm" style="margin-top: 0.75rem; width: 100%;">Aplicar Ajuste</button>
                         </form>
                       </div>
                     </details>
@@ -148,7 +165,8 @@
                        hx-target="#contenido"
                        hx-swap="innerHTML"
                        class="btn-sm outline"
-                       title="Ver Kárdex del Producto">📋 Kárdex</a>
+                       title="Ver Kárdex del Producto"
+                       style="padding: 0.25rem 0.55rem; font-size: 0.775rem;">📋 Kárdex</a>
                   </div>
                 </td>
               </tr>
@@ -156,9 +174,9 @@
             {% else %}
               <tr>
                 <td colspan="7">
-                  <div class="empty-state">
-                    <strong>Catálogo sin productos</strong>
-                    <p>Los productos creados por el administrador aparecerán aquí.</p>
+                  <div class="empty-state" style="padding: 2rem; text-align: center;">
+                    <strong>Catálogo maestro sin productos</strong>
+                    <p style="color: var(--ga-muted); font-size: 0.85rem;">Los productos creados por el administrador aparecerán en este listado.</p>
                   </div>
                 </td>
               </tr>
@@ -168,4 +186,36 @@
       </div>
     </div>
   </div>
+
+  <script>
+    function filtrarTablaProductos() {
+      const q = (document.getElementById("buscar-producto").value || "").toLowerCase().trim();
+      const estado = document.getElementById("filtro-estado").value;
+      const filas = document.querySelectorAll("#tabla-productos-body tr.fila-producto");
+      let visibles = 0;
+
+      filas.forEach(row => {
+        const codigo = (row.getAttribute("data-codigo") || "").toLowerCase();
+        const nombre = (row.getAttribute("data-nombre") || "").toLowerCase();
+        const esBajo = row.getAttribute("data-alerta") === "true";
+
+        const coincideTexto = !q || codigo.includes(q) || nombre.includes(q);
+        let coincideEstado = true;
+        if (estado === "normal") coincideEstado = !esBajo;
+        if (estado === "bajo") coincideEstado = esBajo;
+
+        if (coincideTexto && coincideEstado) {
+          row.style.display = "";
+          visibles++;
+        } else {
+          row.style.display = "none";
+        }
+      });
+
+      const contador = document.getElementById("contador-productos");
+      if (contador) {
+        contador.textContent = `Mostrando ${visibles} productos`;
+      }
+    }
+  </script>
 </section>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ERP Local — Gestión de Almacén</title>
+  <title>Gestión de Almacén</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -18,7 +18,7 @@
         <div class="brand-mark" aria-hidden="true">GST</div>
         <div class="brand-text">
           <strong>Almacén</strong>
-          <span>Bodegas · Kárdex · POS</span>
+          <span>Bodegas · Kárdex</span>
         </div>
       </div>
 
@@ -42,7 +42,7 @@
             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
             <path d="M3.3 7 12 12l8.7-5M12 22V12"/>
           </svg>
-          Productos & Bodegas
+          Maestro de Productos
         </a>
         <a href="#" class="nav-link"
            hx-get="/vistas/kardex"
@@ -79,7 +79,7 @@
             <line x1="2" y1="10" x2="22" y2="10"/>
             <path d="M7 15h2M13 15h4"/>
           </svg>
-          Facturación POS / Venta
+          Facturación / Venta
         </a>
         <a href="#" class="nav-link"
            hx-get="/vistas/almacenes"
@@ -187,10 +187,10 @@
   <script>
     var TITULOS = {
       "/vistas/inicio": "Panel Principal",
-      "/vistas/inventario": "Inventario por Bodegas",
+      "/vistas/inventario": "Maestro de Productos",
       "/vistas/kardex": "Kárdex & Movimientos",
       "/vistas/compras": "Gestión de Compras & Proveedores",
-      "/vistas/facturacion": "Facturación Rápida / Mostrador POS",
+      "/vistas/facturacion": "Facturación Rápida & Ventas",
       "/vistas/almacenes": "Gestión de Bodegas",
       "/vistas/activos": "Activos Fijos",
       "/vistas/usuarios": "Gestión de Usuarios & Roles"
@@ -234,7 +234,7 @@
 
     /* —— Componente Searchable Combobox (Vanilla JS) —— */
     function makeSelectSearchable(selectElem) {
-      if (!selectElem || selectElem.dataset.comboboxInitialized) return;
+      if (!selectElem || selectElem.dataset.comboboxInitialized || selectElem.closest('.combobox-wrap')) return;
       selectElem.dataset.comboboxInitialized = "true";
 
       selectElem.style.display = "none";

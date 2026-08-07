@@ -1,0 +1,38 @@
+# Byte-compiled / compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Directorios de compilación y PyInstaller
+build/
+dist/
+
+# Entornos virtuales
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Bases de datos locales de desarrollo y archivos de prueba
+*.db
+*.sqlite3
+*.sqlite
+scratch/*.db
+
+# Logs y temporales
+*.log
+scratch/*.log
+
+# Archivos de sistema operativo
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+desktop.ini
+
+# Archivos de editores e IDEs
+.vscode/
+.idea/
+*.swp
+*.swo

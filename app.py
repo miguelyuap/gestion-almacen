@@ -20,6 +20,7 @@ from flask import (
 
 import base_datos as db
 import reportes
+import facturacion_hka
 
 app = Flask(__name__)
 app.secret_key = "erp_almacen_secret_key_local_desktop_2026"
@@ -399,7 +400,7 @@ def crear_factura_pos():
 
         usr_id = g.usuario_actual["id"] if hasattr(g, "usuario_actual") and g.usuario_actual else None
 
-        db.procesar_venta_pos(
+        venta_id = db.procesar_venta_pos(
             almacen_id=almacen_id,
             cliente_nombre=cliente_nombre,
             cliente_nit=cliente_nit,
@@ -409,6 +410,19 @@ def crear_factura_pos():
             usuario_id=usr_id,
         )
         
+        # Disparar emisión de Facturación Electrónica DIAN / The Factory HKA
+        facturacion_hka.enviar_factura_electronica_hka(venta_id)
+
+        return vista_facturacion()
+    except Exception as exc:
+        abort(400, description=str(exc))
+
+
+@app.post("/facturas/<int:venta_id>/retransmitir")
+@login_required
+def retransmitir_factura_pos(venta_id: int):
+    try:
+        facturacion_hka.enviar_factura_electronica_hka(venta_id)
         return vista_facturacion()
     except Exception as exc:
         abort(400, description=str(exc))
